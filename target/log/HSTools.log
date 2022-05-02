@@ -1,0 +1,6 @@
+03-26 11:14:20.528 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^BTA6.0V.{13}$, 文本:123
+03-26 11:14:20.531 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:46):结果: 
+03-26 11:14:20.532 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^\d{12}$, 文本:123
+03-26 11:14:20.532 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:46):结果: 
+03-26 11:14:20.533 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^M\d{12}$, 文本:123
+03-26 11:14:20.533 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:46):结果: 
