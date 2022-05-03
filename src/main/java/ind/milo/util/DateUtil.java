@@ -40,9 +40,7 @@ public class DateUtil {
 
         Timestamp createTime = new Timestamp(new Date().getTime());
 
-
     }
-
 
 
 }
