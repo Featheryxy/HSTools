@@ -25,7 +25,18 @@ public class UIFactory {
         return group;
     }
 
+    /**
+     * 获取单个按钮
+     * @param text 按钮名称
+     * @return
+     */
     public static Button getSingleButton(String text){
         return new Button(text);
+    }
+
+    public static Button getClearButton(String text, Node node){
+        Button button = new Button(text);
+        // button.setOnAction();
+        return null;
     }
 }
