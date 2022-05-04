@@ -28,6 +28,16 @@ create table todo(
 insert into todo(todo_name, deadline, mdf_time, todo_desc) values ( '123', 21313, 23123, '222');
 
 yyyyMMddHHmmss 8+6 = 14
+
+
+create table tbwork(
+                       mdf_no varchar(25) primary key ,
+                       mdf_reason varchar(255),
+                       mdf_detail varchar(65535),
+                       version varchar(25),
+                       require_no varchar(20),
+                       create_date date
+);
 ```
 
 
