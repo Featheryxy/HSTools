@@ -3,6 +3,8 @@ package ind.milo.panes;
 import ind.milo.framework.AbstractTab;
 import ind.milo.framework.UIFactory;
 import ind.milo.util.StringUtil;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;

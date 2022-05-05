@@ -1,0 +1,21 @@
+package ind.milo.demo.gof.bridge;
+
+import java.util.Random;
+
+public class CountDisplay extends Display {
+    public CountDisplay(DisplayImpl impl) {
+        super(impl);
+    }
+    public void multiDisplay(int times) {       // 循环显示times次
+        open();
+        for (int i = 0; i < times; i++) {
+            print();
+        }
+        close();
+    }
+
+    public void randomDisplay(int times) {
+        Random random = new Random(times);
+        multiDisplay(random.nextInt(times));
+    }
+}

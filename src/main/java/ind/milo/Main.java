@@ -58,6 +58,7 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.setWidth(800);
         primaryStage.setHeight(450);
+        primaryStage.setTitle("HSTools");
         primaryStage.show();
     }
 
