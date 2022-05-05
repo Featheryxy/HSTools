@@ -1,150 +1,135 @@
-04-28 17:13:11.029 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^B?TA6.0V.{13}$, 文本:M202204281229
-202204280749
-T202204280598
+05-05 09:47:57.435 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^B?TA6.0V.{13}$, 文本: 
+M202204241080
+202204240426
+T202204240653
  
  
 新增
-TA6.0V202202.04.000
-04-28 17:13:11.038 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: TA6.0V202202.04.000
-04-28 17:13:11.039 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^\d{12}$, 文本:M202204281229
-202204280749
-T202204280598
+TA6.0V202202.05.000
+理财登记过户6.0
+石世特
+05-05 09:47:57.449 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: TA6.0V202202.05.000
+05-05 09:47:57.449 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^\d{12}$, 文本: 
+M202204241080
+202204240426
+T202204240653
  
  
 新增
-TA6.0V202202.04.000
-04-28 17:13:11.039 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: 202204280749
-04-28 17:13:11.039 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^M\d{12}$, 文本:M202204281229
-202204280749
-T202204280598
+TA6.0V202202.05.000
+理财登记过户6.0
+石世特
+05-05 09:47:57.450 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: 202204240426
+05-05 09:47:57.450 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^M\d{12}$, 文本: 
+M202204241080
+202204240426
+T202204240653
  
  
 新增
-TA6.0V202202.04.000
-04-28 17:13:11.040 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: M202204281229
-04-28 17:13:48.254 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^B?TA6.0V.{13}$, 文本:M202204281229
-202204280749
-T202204280598
+TA6.0V202202.05.000
+理财登记过户6.0
+石世特
+05-05 09:47:57.451 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: M202204241080
+05-05 09:48:17.092 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^B?TA6.0V.{13}$, 文本: 
+M202204241080
+202204240426
+T202204240653
  
  
 新增
-TA6.0V202202.04.000
-04-28 17:13:48.254 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: TA6.0V202202.04.000
-04-28 17:13:48.255 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^\d{12}$, 文本:M202204281229
-202204280749
-T202204280598
+TA6.0V202202.05.000
+理财登记过户6.0
+石世特
+05-05 09:48:17.092 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: TA6.0V202202.05.000
+05-05 09:48:17.092 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^\d{12}$, 文本: 
+M202204241080
+202204240426
+T202204240653
  
  
 新增
-TA6.0V202202.04.000
-04-28 17:13:48.255 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: 202204280749
-04-28 17:13:48.255 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^M\d{12}$, 文本:M202204281229
-202204280749
-T202204280598
+TA6.0V202202.05.000
+理财登记过户6.0
+石世特
+05-05 09:48:17.093 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: 202204240426
+05-05 09:48:17.093 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^M\d{12}$, 文本: 
+M202204241080
+202204240426
+T202204240653
  
  
 新增
-TA6.0V202202.04.000
-04-28 17:13:48.255 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: M202204281229
-04-28 17:27:13.700 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^B?TA6.0V.{13}$, 文本:	
- 
-M202204281230
-202204280749
-T202204280598-1
+TA6.0V202202.05.000
+理财登记过户6.0
+石世特
+05-05 09:48:17.093 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: M202204241080
+05-05 09:54:26.867 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^B?TA6.0V.{13}$, 文本:M202204251597
+202204220765
+T202204250387
  
  
 新增
-TA6.0V202202.03.002
+TA6.0V202202.05.000
 理财登记过户6.0
 章磊
-04-28 17:27:13.701 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: TA6.0V202202.03.002
-04-28 17:27:13.701 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^\d{12}$, 文本:	
- 
-M202204281230
-202204280749
-T202204280598-1
+2022-05-31
+任务
+05-05 09:54:26.868 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: TA6.0V202202.05.000
+05-05 09:54:26.868 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^\d{12}$, 文本:M202204251597
+202204220765
+T202204250387
  
  
 新增
-TA6.0V202202.03.002
+TA6.0V202202.05.000
 理财登记过户6.0
 章磊
-04-28 17:27:13.701 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: 202204280749
-04-28 17:27:13.702 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^M\d{12}$, 文本:	
- 
-M202204281230
-202204280749
-T202204280598-1
+2022-05-31
+任务
+05-05 09:54:26.869 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: 202204220765
+05-05 09:54:26.869 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^M\d{12}$, 文本:M202204251597
+202204220765
+T202204250387
  
  
 新增
-TA6.0V202202.03.002
+TA6.0V202202.05.000
 理财登记过户6.0
 章磊
-04-28 17:27:13.702 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: M202204281230
-04-29 10:26:16.420 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^B?TA6.0V.{13}$, 文本:	
-M202204281230
-202204280749
-T202204280598-1
- 
- 
-测试打回
-TA6.0V202202.03.002
-理财登记过户6.0
-04-29 10:26:16.423 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: TA6.0V202202.03.002
-04-29 10:26:16.423 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^\d{12}$, 文本:	
-M202204281230
-202204280749
-T202204280598-1
- 
- 
-测试打回
-TA6.0V202202.03.002
-理财登记过户6.0
-04-29 10:26:16.424 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: 202204280749
-04-29 10:26:16.424 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^M\d{12}$, 文本:	
-M202204281230
-202204280749
-T202204280598-1
- 
- 
-测试打回
-TA6.0V202202.03.002
-理财登记过户6.0
-04-29 10:26:16.424 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: M202204281230
-04-29 11:31:05.827 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^B?TA6.0V.{13}$, 文本:
-1
- 
-M202204290454
-202204261040
-T202204280957
+2022-05-31
+任务
+05-05 09:54:26.869 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: M202204251597
+05-05 13:22:50.600 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^B?TA6.0V.{13}$, 文本:M202204220984
+202204220355
+T202204220332
  
  
 新增
-TA6.0V202202.03.002
+TA6.0V202202.05.000
 理财登记过户6.0
-04-29 11:31:05.829 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: TA6.0V202202.03.002
-04-29 11:31:05.829 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^\d{12}$, 文本:
-1
- 
-M202204290454
-202204261040
-T202204280957
+章磊
+
+05-05 13:22:50.603 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: TA6.0V202202.05.000
+05-05 13:22:50.604 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^\d{12}$, 文本:M202204220984
+202204220355
+T202204220332
  
  
 新增
-TA6.0V202202.03.002
+TA6.0V202202.05.000
 理财登记过户6.0
-04-29 11:31:05.830 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: 202204261040
-04-29 11:31:05.830 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^M\d{12}$, 文本:
-1
- 
-M202204290454
-202204261040
-T202204280957
+章磊
+
+05-05 13:22:50.604 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: 202204220355
+05-05 13:22:50.604 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:39):正则表达式: ^M\d{12}$, 文本:M202204220984
+202204220355
+T202204220332
  
  
 新增
-TA6.0V202202.03.002
+TA6.0V202202.05.000
 理财登记过户6.0
-04-29 11:31:05.830 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: M202204290454
+章磊
+
+05-05 13:22:50.604 DEBUG Thread ind.milo.util.RegUtil.findRex(RegUtil.java:43):结果: M202204220984
