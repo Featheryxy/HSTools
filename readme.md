@@ -36,7 +36,8 @@ create table tbwork(
                        mdf_detail varchar(65535),
                        version varchar(25),
                        require_no varchar(20),
-                       create_date date
+                       create_date date,
+                       tag varchar(25)
 );
 ```
 
