@@ -2,17 +2,19 @@ package ind.milo.panes;
 
 import ind.milo.util.NIOUtil;
 import ind.milo.util.RegUtil;
+import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 public class MdfTab {
     private Tab mdfTab = new Tab("修改单");
-    private VBox vBox = new VBox();
+    private VBox vBox = new VBox(10);
 
     private TextField resonTextField = new TextField();
     private TextArea inputTextArea = new TextArea();
@@ -37,8 +39,11 @@ public class MdfTab {
     private void init() {
         mdfTab.setClosable(false);
         hBox.getChildren().addAll(transferBtn, fileBtn);
+        VBox.setVgrow(outputTextArea, Priority.ALWAYS);
         vBox.getChildren().addAll(inputTextArea, resonTextField, hBox, outputTextArea);
+        vBox.setPadding(new Insets(10));
         mdfTab.setContent(vBox);
+
     }
 
     private void action() {
