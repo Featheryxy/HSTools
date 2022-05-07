@@ -4,10 +4,14 @@ import ind.milo.panes.ToDoTab;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import ind.milo.panes.MdfTab;
@@ -28,7 +32,9 @@ public class Main extends Application {
 
 
         HBox hBox = new HBox();
-        hBox.setMinHeight(20);
+        hBox.setPadding(new Insets(10));
+        // 设置内容居中靠左对齐
+        hBox.setAlignment(Pos.CENTER_LEFT);
 
         CheckBox c1 = new CheckBox("置顶");
 
@@ -39,6 +45,8 @@ public class Main extends Application {
         hBox.getChildren().add(c1);
 
         VBox vBox = new VBox(2);
+        // 设置 tabPane 自动填满 vBox 剩余空间
+        VBox.setVgrow(tabPane, Priority.ALWAYS);
         vBox.getChildren().addAll(hBox, hSeparator, tabPane);
 
         c1.selectedProperty().addListener(new ChangeListener<Boolean>() {
