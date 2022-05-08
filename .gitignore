@@ -1,3 +1,2 @@
-
-*.log
-log/HSTools.log
+target
+log
