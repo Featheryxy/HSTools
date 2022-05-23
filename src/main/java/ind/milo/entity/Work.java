@@ -12,8 +12,10 @@ import java.util.Date;
 public class Work {
     private String mdfNo;
     private String mdfReason;
-    private String mdfDetail;
+    private String mdfDesc;
     private String version;
     private String requireNo;
-    private Date createDate;
+    private Date deadline;
+    private String tagId;
+    private String filePath;
 }

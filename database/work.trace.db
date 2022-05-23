@@ -1,7 +1,7 @@
-2022-05-04 04:14:30 jdbc[3]: exception
+2022-05-22 07:41:52 jdbc[3]: exception
 java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
 	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1573)
-	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:470)
+	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:466)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -19,10 +19,10 @@ java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supporte
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-2022-05-04 04:45:11 jdbc[3]: exception
+2022-05-22 07:41:57 jdbc[3]: exception
 java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
 	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1573)
-	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:470)
+	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:466)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -40,34 +40,13 @@ java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supporte
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-2022-05-04 04:45:11 jdbc[4]: exception
-java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
-	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1573)
-	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:470)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
-	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
-	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:562)
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:796)
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:677)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:676)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:829)
-2022-05-04 04:45:12 jdbc[4]: exception
+2022-05-22 07:41:57 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATALOGS" not found; SQL statement:
 select catalog_name from information_schema.catalogs [42102-210]
-2022-05-04 04:50:06 jdbc[5]: exception
+2022-05-22 07:42:13 jdbc[3]: exception
 java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
 	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1573)
-	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:470)
+	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:466)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -85,13 +64,10 @@ java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supporte
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-2022-05-04 04:50:06 jdbc[5]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATALOGS" not found; SQL statement:
-select catalog_name from information_schema.catalogs [42102-210]
-2022-05-04 04:51:00 jdbc[6]: exception
+2022-05-22 07:42:30 jdbc[4]: exception
 java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
 	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1573)
-	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:470)
+	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:466)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -109,13 +85,16 @@ java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supporte
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-2022-05-04 04:51:00 jdbc[6]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATALOGS" not found; SQL statement:
-select catalog_name from information_schema.catalogs [42102-210]
-2022-05-04 04:51:11 jdbc[7]: exception
+2022-05-22 07:42:31 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATALOGS" not found (this database is empty); SQL statement:
+select catalog_name from information_schema.catalogs [42104-210]
+2022-05-22 07:42:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TBWORK" not found (this database is empty); SQL statement:
+select * from tbwork [42104-210]
+2022-05-22 07:42:44 jdbc[5]: exception
 java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
 	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1573)
-	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:470)
+	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:466)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -133,13 +112,22 @@ java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supporte
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-2022-05-04 04:51:11 jdbc[7]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATALOGS" not found; SQL statement:
-select catalog_name from information_schema.catalogs [42102-210]
-2022-05-04 04:52:26 jdbc[8]: exception
+2022-05-22 07:42:44 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATALOGS" not found (this database is empty); SQL statement:
+select catalog_name from information_schema.catalogs [42104-210]
+2022-05-22 07:42:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TBWORK" not found (this database is empty); SQL statement:
+select * from tbwork [42104-210]
+2022-05-22 07:43:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TBWORK" not found (this database is empty); SQL statement:
+delete from tbwork [42104-210]
+2022-05-22 07:43:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TBWORK" not found (this database is empty); SQL statement:
+select * from tbwork [42104-210]
+2022-05-22 07:50:01 jdbc[6]: exception
 java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
 	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1573)
-	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:470)
+	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:466)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -157,6 +145,209 @@ java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supporte
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-2022-05-04 04:52:26 jdbc[8]: exception
+2022-05-22 07:50:01 jdbc[6]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATALOGS" not found; SQL statement:
 select catalog_name from information_schema.catalogs [42102-210]
+2022-05-22 07:51:18 jdbc[7]: exception
+java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
+	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1573)
+	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:466)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:562)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:796)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:677)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:676)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-05-22 07:51:18 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATALOGS" not found; SQL statement:
+select catalog_name from information_schema.catalogs [42102-210]
+2022-05-22 15:51:30 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: F:/JavaFX/HSTools/database/work.mv.db [2.0.206/7]" [50000-206]
+	at org.h2.message.DbException.get(DbException.java:216)
+	at org.h2.message.DbException.convert(DbException.java:414)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:120)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3292)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:585)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:461)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4052)
+	at org.h2.mvstore.db.Store.<init>(Store.java:129)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:117)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at ind.milo.util.SessionUtil.getConnection(SessionUtil.java:20)
+	at ind.milo.dao.WorkDao.<init>(WorkDao.java:14)
+	at ind.milo.dao.WorkDao.main(WorkDao.java:64)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: F:/JavaFX/HSTools/database/work.mv.db [2.0.206/7]" [50000-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 20 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: F:/JavaFX/HSTools/database/work.mv.db [2.0.206/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:444)
+	... 14 more
+2022-05-22 12:34:26 jdbc[3]: exception
+java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
+	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1573)
+	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:466)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:562)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:796)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:677)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:676)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-05-22 12:50:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no
+when not matched then [42001-210]
+2022-05-22 12:53:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no
+when not matched then [42001-210]
+2022-05-22 12:53:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no
+when not matched then [42001-210]
+2022-05-22 12:53:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no
+when not matched then [42001-210]
+2022-05-22 12:53:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no
+when not matched then [42001-210]
+2022-05-22 12:59:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no
+when not matched then [42001-210]
+2022-05-22 12:59:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no
+when not matched then [42001-210]
+2022-05-22 12:59:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no
+when not matched then [42001-210]
+2022-05-22 12:59:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no
+when not matched then [42001-210]
+2022-05-22 12:59:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no
+when not matched then [42001-210]
+2022-05-22 12:59:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using tbwork B on A.mdf_no=B.mdf_no
+when not matched then [42001-210]
+2022-05-22 13:02:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using (select '123' mdf_no from dual) B on A.mdf_no=B.mdf_no\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using (select '123' mdf_no from dual) B on A.mdf_no=B.mdf_no
+when not matched then [42001-210]
+2022-05-22 13:04:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using (select '123' mdf_no from dual) B on A.mdf_no=B.mdf_no\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using (select '123' mdf_no from dual) B on A.mdf_no=B.mdf_no
+when not matched then [42001-210]
+2022-05-22 13:04:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using (select '123' mdf_no from dual) B on A.mdf_no=B.mdf_no\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using (select '123' mdf_no from dual) B on A.mdf_no=B.mdf_no
+when not matched then [42001-210]
+2022-05-22 13:05:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)
+when not matched then [42001-210]
+2022-05-22 13:05:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)
+when not matched then [42001-210]
+2022-05-22 13:05:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)
+when not matched then [42001-210]
+2022-05-22 13:05:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)
+when not matched then [42001-210]
+2022-05-22 13:05:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)
+when not matched then [42001-210]
+2022-05-22 13:05:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)
+when not matched then [42001-210]
+2022-05-22 13:05:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)
+when not matched then [42001-210]
+2022-05-22 13:05:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)
+when not matched then [42001-210]
+2022-05-22 13:05:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)\000d\000awhen not matched then[*]"; expected "INSERT"; SQL statement:
+merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)
+when not matched then [42001-210]
+2022-05-22 13:07:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no)[*]"; expected "., [, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, WHEN"; SQL statement:
+merge into tbwork A using (select '123' mdf_no from dual) B on (A.mdf_no=B.mdf_no) [42001-210]
+2022-05-22 13:10:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+merge into tbwork key(mdf_no) values ( '123', '123' ) [21002-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.command.dml.Merge.prepare(Merge.java:274)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor24.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:562)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:796)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:677)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:676)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)

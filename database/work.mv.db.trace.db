@@ -1,3 +1,0 @@
-2022-05-04 12:53:14 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TBWORK" not found (this database is empty); SQL statement:
-select * from tbwork [42104-206]

@@ -22,6 +22,7 @@ public class MdfTab {
 
     private Button transferBtn = new Button("转换");
     private Button fileBtn = new Button("生成文件");
+    private Button parseBtn = new Button("解析");
 
     private HBox hBox = new HBox();
     private Group buttonGroup = new Group();
@@ -38,7 +39,7 @@ public class MdfTab {
 
     private void init() {
         mdfTab.setClosable(false);
-        hBox.getChildren().addAll(transferBtn, fileBtn);
+        hBox.getChildren().addAll(transferBtn, fileBtn,parseBtn);
         VBox.setVgrow(outputTextArea, Priority.ALWAYS);
         vBox.getChildren().addAll(inputTextArea, resonTextField, hBox, outputTextArea);
         vBox.setPadding(new Insets(10));
@@ -56,6 +57,11 @@ public class MdfTab {
         fileBtn.setOnAction(actionEvent -> {
             String submitInfo = RegUtil.getSubmitInfo(inputTextArea.getText(), resonTextField.getText());
             NIOUtil.makeFile("nihao, 中国人", "修改单1.txt");
+        });
+
+        parseBtn.setOnAction(actionEvent->{
+            String inputText = inputTextArea.getText();
+
         });
     }
 

@@ -51,16 +51,27 @@ insert into todo(todo_name, deadline, mdf_time, todo_desc) values ( '123', 21313
 
 yyyyMMddHHmmss 8+6 = 14
 
+            System.out.println("版本号："+jsonObj.get("versionNO").toString());
+            System.out.println("修改单号："+jsonObj.get("modifyNum").toString());
+            System.out.println("修改原因"+jsonObj.get("modifyReason").toString());
+            System.out.println("需求号："+jsonObj.get("reqNums").toString());
+            System.out.println("要求完成时间："+jsonObj.get("promiseDateStr").toString());
+
+select * from tbwork;
+delete from tbwork;
+insert into tbwork(mdf_no, mdf_reason,mdf_desc) values ( '123','456','789' );
+merge into tbwork(mdf_no, mdf_reason) key(mdf_no) values ( '123', '123' );
+
 
 create table tbwork(
     mdf_no varchar(25) primary key ,
-    mdf_reason varchar(255),
-    mdf_detail varchar(65535),
-    version varchar(25),
+    mdf_reason varchar(65535),
+    mdf_desc varchar(255),
+    version_no varchar(25),
     require_no varchar(20),
-    create_date date,
-    tag varchar(25),
-    file_path varchar(255) comments ""
+    deadline date,
+    tag_id varchar(25),
+    file_path varchar(255) 
 );
 ```
 

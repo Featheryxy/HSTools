@@ -142,14 +142,13 @@ public class JsonDemo {
 
         for (Object obj : resultBOList) {
             JSONObject jsonObj = (JSONObject) obj;
-            System.out.println(jsonObj.get("versionNO").toString());
-            System.out.println(jsonObj.get("modifyNum").toString());
-            System.out.println(jsonObj.get("modifyReason").toString());
-            System.out.println(jsonObj.get("reqNums").toString());
-
-
+            System.out.println("版本号："+jsonObj.get("versionNO").toString());
+            System.out.println("修改单号："+jsonObj.get("modifyNum").toString());
+            System.out.println("修改原因"+jsonObj.get("modifyReason").toString());
+            System.out.println("需求号："+jsonObj.get("reqNums").toString());
+            System.out.println("任务号："+jsonObj.get("taskNum").toString());
+            System.out.println("要求完成时间："+jsonObj.get("promiseDateStr").toString());
+            System.out.println();
         }
-
-
     }
 }
