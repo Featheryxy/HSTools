@@ -1,4 +1,4 @@
-package ind.milo.demo;
+package ind.milo.demo.javafxdemo;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
