@@ -24,50 +24,50 @@ public class TestStream {
 
         List<Author> authors = getAuthors();
 
-        // 1.年龄小于18岁的作家名字去重
-        test6(authors);
+//        // 1.年龄小于18岁的作家名字去重
+//        test6(authors);
+//
+//        // 2.简化写法
+//        test5(authors);
+//
+//
+//        // 3.数组转stream，前面是list集合
+//        test4();
+//
+//        // 4.map转stream 得先转换成单列集合才行
+//        test3();
+//
+//        test();
+//
+//        test1();
+//
+//        test2();
+//
+//        test7();
+//
+//        test8();
+//
+//        test9();
 
-        // 2.简化写法
-        test5(authors);
-
-
-        // 3.数组转stream，前面是list集合
-        test4();
-
-        // 4.map转stream 得先转换成单列集合才行
-        test3();
-
-        test();
-
-        test1();
-
-        test2();
-
-        test7();
-
-        test8();
-
-        test9();
-
-        test10();
+//        test10();
 
         test11();
-
-        test12();
-
-        test13();
-
-        test14();
-
-        test15();
-
-        test16();
-
-        test17();
-
-        test18();
-
-        test19();
+//
+//        test12();
+//
+//        test13();
+//
+//        test14();
+//
+//        test15();
+//
+//        test16();
+//
+//        test17();
+//
+//        test18();
+//
+//        test19();
     }
 
     /**
@@ -95,7 +95,9 @@ public class TestStream {
                 .distinct()
                 .map(author -> author.getAge())
                 .reduce((result, element) -> result < element ? result : element);
-        System.out.println("单个参数的reduce方法使用，作者中年龄最小的是：" + reduce.get());
+        if (reduce.isPresent()) {
+            System.out.println("单个参数的reduce方法使用，作者中年龄最小的是：" + reduce.get());
+        }
     }
 
     /**
