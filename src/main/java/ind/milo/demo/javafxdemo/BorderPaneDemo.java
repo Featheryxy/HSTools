@@ -1,4 +1,4 @@
-package ind.milo.demo;
+package ind.milo.demo.javafxdemo;
 
 import ind.milo.framework.UIFactory;
 import javafx.application.Application;

@@ -1,4 +1,4 @@
-package ind.milo.demo;
+package ind.milo.demo.javafxdemo;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;

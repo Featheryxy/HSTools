@@ -1,4 +1,4 @@
-package ind.milo.demo;
+package ind.milo.demo.javafxdemo;
 
 import java.sql.*;
 
