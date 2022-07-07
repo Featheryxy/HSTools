@@ -3,7 +3,6 @@ package ind.milo.demo.functionprogram;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
-import java.util.function.Function;
 
 @Slf4j
 public class func1 {
@@ -20,6 +19,10 @@ public class func1 {
 
     public static int mult(int a, int b) {
         return a * b;
+    }
+
+    interface Function<T, U> {
+        U apply(T arg);
     }
 
     Function<Integer, Integer> square = new Function<Integer, Integer>() {
