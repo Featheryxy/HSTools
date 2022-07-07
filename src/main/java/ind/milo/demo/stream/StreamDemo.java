@@ -75,9 +75,17 @@ public class StreamDemo {
         map.put("Lisa", "female");
 
         Set<Map.Entry<String, String>> entries = map.entrySet();
-        entries.stream()
-                .filter(entry-> "male".equals(entry.getValue()))
-                .forEach(System.out::println);
+        Optional<String> first = entries.stream()
+                .filter(entry -> "male".equals(entry.getValue()))
+                .map(entry -> "小明").findFirst();
+        if (first.isPresent()) {
+            System.out.println(first.get());
+        }
+
+        System.out.println(first.isPresent());
+        boolean present = first.isPresent();
+
+
         // Mike=male
     }
 }
