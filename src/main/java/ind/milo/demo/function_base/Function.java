@@ -28,6 +28,8 @@ class FunctionTest {
 //        }
 //    }
 
+//    Function<Integer, Integer> square2
+
     // 1.子类实现了函数式接口中的方法; 2.创建了该子类对象
 //    static Function<Integer, Integer> square2 = new Function<Integer, Integer>() {
 //        @Override
@@ -35,11 +37,11 @@ class FunctionTest {
 //            return arg * arg;
 //        }
 //    };
-    static Function<Integer, Integer> square2 = arg -> arg * arg;
+//    static Function<Integer, Integer> square2 = arg -> arg * arg;
 
     public static void main(String[] args) {
 //        System.out.println(square1.apply(2));
 //        System.out.println(new FunctionImp().apply(2));
-        System.out.println(square2.apply(2));
+//        System.out.println(square2.apply(2));
     }
 }

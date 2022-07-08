@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 
 @Slf4j
 public class func1 {
-
-
     public static int div(int a, int b) {
         return (int) (a / (float) b);
     }
@@ -67,16 +65,16 @@ public class func1 {
     }
 
 
-    private static void overflow() {
-        int fnum = 10000;
-        Function<Integer, Integer> g = x -> x;
-        Function<Integer, Integer> f = y -> y + 1;
-        for (int i = 0; i < fnum; i++) {
-            g = compose(f, g);
-            System.out.println(i);
-        }
-        System.out.println(g.apply(0));
-    }
+//    private static void overflow() {
+//        int fnum = 10000;
+//        Function<Integer, Integer> g = x -> x;
+//        Function<Integer, Integer> f = y -> y + 1;
+//        for (int i = 0; i < fnum; i++) {
+//            g = compose(f, g);
+//            System.out.println(i);
+//        }
+//        System.out.println(g.apply(0));
+//    }
 
     public static void main(String[] args) {
         Function<Integer, Function<Integer, Integer>> add = x -> y -> x + y;

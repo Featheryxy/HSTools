@@ -9,16 +9,22 @@ public interface Function {
 }
 
 class TestF {
-    private TestF() {
-
-    }
-
+    // 类对象的名称 triple 实例变量
     Function triple = new Function() {
         @Override
         public int apply(int arg) {
             return arg * 3;
         }
     };
+
+    Function suare(int arg) {
+        return new Function() {
+            @Override
+            public int apply(int arg1) {
+                return arg1 * 3;
+            }
+        };
+    }
 
     Function square = new Function() {
         @Override
@@ -27,16 +33,19 @@ class TestF {
         }
     };
 
-    Function compose(Function f1, Function f2) {
-        return new Function() {
-            @Override
-            public int apply(int arg) {
-                return f1.apply(f2.apply(arg));
-            }
-        };
+    // 成员方法。todo 为什么定义成final?
+    Function compose(final Function f1, final Function f2) {
+        return arg -> f1.apply(f2.apply(arg));
     }
 
+
+
+
     public static void main(String[] args) {
-        System.out.println();
+        TestF testF = new TestF();
+        System.out.println(testF.triple.apply(2));
+        System.out.println(testF.compose(testF.square, testF.triple).apply(2));
+        System.out.println(testF.compose(testF.square, testF.triple).apply(2));
     }
+
 }
