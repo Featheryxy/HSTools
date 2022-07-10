@@ -17,6 +17,7 @@ class TestF {
         }
     };
 
+    // 方法
     Function suare(int arg) {
         return new Function() {
             @Override
@@ -26,6 +27,7 @@ class TestF {
         };
     }
 
+    // 成员变量
     Function square = new Function() {
         @Override
         public int apply(int arg) {
@@ -34,9 +36,24 @@ class TestF {
     };
 
     // 成员方法。todo 为什么定义成final?
-    Function compose(final Function f1, final Function f2) {
-        return arg -> f1.apply(f2.apply(arg));
+    Function compose( Function f1,  Function f2) {
+        return new Function() {
+            @Override
+            public int apply(int arg) {
+                return f1.apply(f2.apply(arg));
+            }
+        };
     }
+
+    Function compose = new Function() {
+        Function f1;
+        Function f2;
+        @Override
+        public int apply(int arg) {
+            return f1.apply(f2.apply(arg));
+        }
+    };
+
 
 
 
@@ -44,6 +61,7 @@ class TestF {
     public static void main(String[] args) {
         TestF testF = new TestF();
         System.out.println(testF.triple.apply(2));
+        System.out.println(testF.square.apply(2));
         System.out.println(testF.compose(testF.square, testF.triple).apply(2));
         System.out.println(testF.compose(testF.square, testF.triple).apply(2));
     }

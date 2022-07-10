@@ -39,9 +39,15 @@ class FunctionTest {
 //    };
 //    static Function<Integer, Integer> square2 = arg -> arg * arg;
 
+    static Function<Integer , Function<Integer , Integer>> add = x -> y -> x + y;
+
+    Function<Double, Double> sin = Math::sin;
+    Function<Double, Double> sin2 = a -> Math.sin(a);
+
     public static void main(String[] args) {
 //        System.out.println(square1.apply(2));
 //        System.out.println(new FunctionImp().apply(2));
 //        System.out.println(square2.apply(2));
+        System.out.println(add.apply(2).apply(3));
     }
 }
