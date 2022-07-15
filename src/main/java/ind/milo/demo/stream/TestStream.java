@@ -6,6 +6,7 @@ package ind.milo.demo.stream;
 
 
 import ind.milo.demo.stream.entity.*;
+import org.junit.jupiter.api.Test;
 
 
 import java.lang.reflect.Array;
@@ -198,6 +199,7 @@ public class TestStream {
     /**
      * 获取所有作者名字合集list, set, map
      */
+    @Test
     private static void test11() {
         System.out.println("转换成list集合");
         List<Book> bookList = getAuthors().stream().flatMap(author -> author.getBookList().stream())
