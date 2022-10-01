@@ -25,6 +25,5 @@ public class TimeDemo {
 
         LocalDate date = LocalDate.of(2014, 1, 1).plusDays(255);
         log.info(String.valueOf(date));
-        DayOfWeek.FRIDAY
     }
 }
