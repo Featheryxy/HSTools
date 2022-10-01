@@ -1,5 +1,9 @@
 package ind.milo.demo.functionprogram;
 
+import org.junit.jupiter.api.Test;
+
+import java.util.HashMap;
+
 /**
  * @Date 2022/7/7 9:20
  * @Created by Milo
@@ -55,7 +59,14 @@ class TestF {
     };
 
 
-
+    @Test
+    public void Test1() {
+        HashMap<Object, Object> map = new HashMap<>();
+        map.put("1", "2");
+        map.put("1", "1");
+        System.out.println(map.toString());
+        System.out.println(map.get("123"));
+    }
 
 
     public static void main(String[] args) {
