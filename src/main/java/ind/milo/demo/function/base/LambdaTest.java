@@ -1,4 +1,4 @@
-package ind.milo.demo.function_base;
+package ind.milo.demo.function.base;
 
 
 

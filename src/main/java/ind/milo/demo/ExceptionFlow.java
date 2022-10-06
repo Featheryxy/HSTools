@@ -1,8 +1,8 @@
-package ind.milo.demo.functionprogram;
+package ind.milo.demo;
 
 import java.io.IOException;
 
-public class Main {
+public class ExceptionFlow {
     private void fun1() throws IOException {
         throw new IOException("level 1 exception");
     }
@@ -27,7 +27,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            new Main().fun3();
+            new ExceptionFlow().fun3();
             System.out.println("0");
         } catch (Exception e) {
             e.printStackTrace();
