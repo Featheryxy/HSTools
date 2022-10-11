@@ -1,5 +1,6 @@
 package ind.milo.panes;
 
+import ind.milo.framework.AbstractTab;
 import ind.milo.util.NIOUtil;
 import ind.milo.util.RegUtil;
 import javafx.geometry.Insets;
@@ -12,7 +13,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
-public class MdfTab {
+public class MdfTab extends AbstractTab {
     private Tab mdfTab = new Tab("修改单");
     private VBox vBox = new VBox(10);
 
@@ -32,22 +33,17 @@ public class MdfTab {
         action();
     }
 
-    public Tab getMdfTab() {
-        return mdfTab;
-    }
 
-
-    private void init() {
+    public void init() {
         mdfTab.setClosable(false);
         hBox.getChildren().addAll(transferBtn, fileBtn,parseBtn);
         VBox.setVgrow(outputTextArea, Priority.ALWAYS);
         vBox.getChildren().addAll(inputTextArea, resonTextField, hBox, outputTextArea);
         vBox.setPadding(new Insets(10));
         mdfTab.setContent(vBox);
-
     }
 
-    private void action() {
+    public void action() {
         // todo 后续改成线程监听
         transferBtn.setOnAction(actionEvent -> {
             String submitInfo = RegUtil.getSubmitInfo(inputTextArea.getText(), resonTextField.getText());
@@ -63,6 +59,11 @@ public class MdfTab {
             String inputText = inputTextArea.getText();
 
         });
+    }
+
+    @Override
+    public Tab getTab() {
+        return mdfTab;
     }
 
 }

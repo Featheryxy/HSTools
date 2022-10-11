@@ -1,5 +1,6 @@
 package ind.milo.util;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,16 +13,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+@Slf4j
 public class PropertiesUtil {
+    private PropertiesUtil() {
+
+    }
+
     private Properties properties;
-    private Logger logger = LoggerFactory.getLogger(PropertiesUtil.class);
 
     public PropertiesUtil(String fileName) {
         readProperties(fileName);
     }
 
     private void readProperties(String fileName) {
-        logger.info("读取配置文件: {}", fileName);
+        log.info("读取配置文件: {}", fileName);
         properties = new Properties();
         InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(fileName);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
@@ -38,7 +43,7 @@ public class PropertiesUtil {
      * @param key
      * @return
      */
-    public String get(String key) {
+    public  String get(String key) {
         return properties.getProperty(key);
     }
 

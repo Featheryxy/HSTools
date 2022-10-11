@@ -1,4 +1,4 @@
-package ind.milo.demo.todolist;
+package ind.milo.demo.javafxdemo;
 
 
 import javafx.application.*;
@@ -29,7 +29,7 @@ import javafx.print.PrinterJob;
  *
  * @author Bahr
  */
-public class JavaFXDoGood extends Application {
+public class ToDoListDemo extends Application {
 
     private final TableView<Task> tableChron = new TableView<Task>();
     private final ObservableList<Task> data =
@@ -379,7 +379,7 @@ public class JavaFXDoGood extends Application {
             desktop.open(opensFile);
         } catch (IOException ex) {
             Logger.getLogger(
-                    JavaFXDoGood.class.getName()).log(
+                    ToDoListDemo.class.getName()).log(
                     Level.SEVERE, null, ex
             );
         }
@@ -390,7 +390,7 @@ public class JavaFXDoGood extends Application {
             desktop.open(savesFile);
         } catch (IOException ex) {
             Logger.getLogger(
-                    JavaFXDoGood.class.getName()).log(
+                    ToDoListDemo.class.getName()).log(
                     Level.SEVERE, null, ex
             );
         }

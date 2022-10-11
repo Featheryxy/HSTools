@@ -43,6 +43,7 @@ public class FKDemo {
     }
 
     public static void main(String[] args) throws IOException, TemplateException {
+        System.out.println(new File("ftl").getAbsolutePath());
         Configuration cfg = new Configuration(Configuration.getVersion());
         cfg.setDirectoryForTemplateLoading(new File("F:\\JavaFX\\HSTools\\src\\main\\resources\\ftl"));
         Template template = cfg.getTemplate("hello.ftl");

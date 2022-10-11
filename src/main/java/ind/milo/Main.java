@@ -1,5 +1,7 @@
 package ind.milo;
 
+import ind.milo.framework.AbstractTab;
+import ind.milo.panes.TablePane;
 import ind.milo.panes.ToDoTab;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
@@ -22,11 +24,14 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         TabPane tabPane = new TabPane();
 
-        MdfTab mdfTab = new MdfTab();
-        SqlTab sqlTab = new SqlTab();
-        ToDoTab toDoTab = new ToDoTab();
+        AbstractTab tablePane = new TablePane();
+        AbstractTab mdfTab = new MdfTab();
+        AbstractTab sqlTab = new SqlTab();
+        AbstractTab toDoTab = new ToDoTab();
+
         sqlTab.display();
-        tabPane.getTabs().addAll(mdfTab.getMdfTab(), sqlTab.getTab(), toDoTab.getTab());
+        tablePane.display();
+        tabPane.getTabs().addAll(tablePane.getTab(),mdfTab.getTab(), sqlTab.getTab(), toDoTab.getTab());
 
         Separator hSeparator = new Separator(Orientation.HORIZONTAL);
 

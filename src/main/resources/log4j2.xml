@@ -22,22 +22,21 @@
             <DefaultRolloverStrategy max="20"/>
         </RollingFile>
 
-
     </appenders>
 
     <loggers>
 
-        <logger name="ind.milo.util" level="debug">
-            <appender-ref ref="Console"/>
-            <appender-ref ref="RollingFile"/>
-        </logger>
-
 <!--        <logger name="ind.milo.util" level="debug">-->
 <!--            <appender-ref ref="Console"/>-->
+<!--            <appender-ref ref="RollingFile"/>-->
 <!--        </logger>-->
 
-        <root level="all">
+        <logger name="ind.milo.util" level="debug">
             <appender-ref ref="Console"/>
+        </logger>
+
+        <root level="error">
+<!--            <appender-ref ref="Console"/>-->
         </root>
     </loggers>
 </configuration>
