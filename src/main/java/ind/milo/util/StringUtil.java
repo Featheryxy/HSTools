@@ -12,6 +12,10 @@ public class StringUtil {
 
     }
 
+    public static boolean isNullStr(String text) {
+        return text==null || text.trim().length() == 0;
+    }
+
     public static String cleanData(String input) {
         logger.debug("0. 文本输入: %s", input);
         // 1. 将换行符替换为空格字符串
