@@ -7,18 +7,26 @@ import ind.milo.demo.javafxdemo.TableViewDemo;
 import ind.milo.entity.TaskItem;
 import ind.milo.framework.AbstractTab;
 import ind.milo.framework.UIFactory;
+import ind.milo.util.FreemarkerUtil;
 import ind.milo.util.JsonUtil;
 import ind.milo.util.StringUtil;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DataFormat;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
+import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.lang.reflect.InvocationTargetException;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +43,6 @@ public class TablePane extends AbstractTab {
     private TextArea inputTextArea;
     private Button button;
     private TableView<TaskItem> tableView;
-    private Label copylable;
     private List<TaskItem> taskItems;
 
     @Override
@@ -44,7 +51,6 @@ public class TablePane extends AbstractTab {
         inputTextArea = new TextArea();
         vBox = new VBox(10);
         button = UIFactory.getSingleButton("生成");
-        copylable = new Label("copy");
         tableView = new TableView<>();
         setTableView();
         set();
@@ -60,6 +66,8 @@ public class TablePane extends AbstractTab {
         column2.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().getName()));
 
         TableColumn<TaskItem, TaskItem> column3 = new TableColumn<>("操作");
+        column3.setCellValueFactory(p -> new ReadOnlyObjectWrapper<>(p.getValue()));
+        // 添加列
         column3.setCellFactory(new Callback<TableColumn<TaskItem, TaskItem>, TableCell<TaskItem, TaskItem>>() {
             @Override
             public TableCell<TaskItem, TaskItem> call(TableColumn param) {
@@ -73,16 +81,35 @@ public class TablePane extends AbstractTab {
                         }
                     }
                 };
-                copyBtn.setOnAction(event ->
-                        System.out.println(cell.getItem()));
+                copyBtn.setOnAction(event -> {
+                    String ftlPath = "F:\\JavaFX\\HSTools\\src\\main\\resources\\ftl";
+                    String ftlName = "mdf.ftl";
+                    FreemarkerUtil freemarkerUtil = new FreemarkerUtil(ftlPath, ftlName);
+                    Map<String, String> stringMap = null;
+                    try {
+                        stringMap = BeanUtils.describe(cell.getItem());
+                    } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+                        e.printStackTrace();
+                    }
+                    stringMap.put("date", LocalDate.now().toString());
+                    stringMap.put("jobId", "yexy34716");
+                    String mdfStr=null;
+                    try {
+                        mdfStr = freemarkerUtil.exce(stringMap);
+                    } catch (IOException | TemplateException e) {
+                        e.printStackTrace();
+                    }
+
+                    Clipboard clipboard = Clipboard.getSystemClipboard();
+                    ClipboardContent clipboardContent = new ClipboardContent();
+                    clipboardContent.put(DataFormat.PLAIN_TEXT, mdfStr);
+                    clipboard.setContent(clipboardContent);
+                });
                 return cell;
             }
         });
-        // 添加列
-        tableView.getColumns().add(column1);
-        tableView.getColumns().add(column2);
-        tableView.getColumns().add(column3);
 
+        tableView.getColumns().addAll(column1, column2, column3);
         tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
 
@@ -104,6 +131,8 @@ public class TablePane extends AbstractTab {
             tableView.getItems().clear();
             tableView.getItems().addAll(taskItems);
         });
+
+
     }
 
     @Override

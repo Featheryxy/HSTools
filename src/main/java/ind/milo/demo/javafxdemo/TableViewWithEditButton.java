@@ -28,7 +28,9 @@ public class TableViewWithEditButton extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        // 1. 创建tableview;
         TableView<Person> table = new TableView<>();
+        // 2. 为tableview设置列
         table.getColumns().add(column("First Name", Person::firstNameProperty, 150));
         table.getColumns().add(column("Last Name", Person::lastNameProperty, 150));
         table.getColumns().add(column("Email", Person::emailProperty, 200));

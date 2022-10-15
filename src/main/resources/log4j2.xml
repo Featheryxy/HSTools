@@ -35,8 +35,8 @@
             <appender-ref ref="Console"/>
         </logger>
 
-        <root level="error">
-<!--            <appender-ref ref="Console"/>-->
+        <root level="info">
+            <appender-ref ref="Console"/>
         </root>
     </loggers>
 </configuration>
