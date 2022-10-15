@@ -14,6 +14,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
+import javafx.util.Callback;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,6 +35,8 @@ public class TablePane extends AbstractTab {
     private TextArea inputTextArea;
     private Button button;
     private TableView<TaskItem> tableView;
+    private Label copylable;
+    private List<TaskItem> taskItems;
 
     @Override
     public void init() {
@@ -41,6 +44,7 @@ public class TablePane extends AbstractTab {
         inputTextArea = new TextArea();
         vBox = new VBox(10);
         button = UIFactory.getSingleButton("生成");
+        copylable = new Label("copy");
         tableView = new TableView<>();
         setTableView();
         set();
@@ -54,11 +58,31 @@ public class TablePane extends AbstractTab {
         TableColumn<TaskItem, String> column2 = new TableColumn<>("修改原因");
 //        column2.setCellValueFactory(new PropertyValueFactory<>("name"));
         column2.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().getName()));
-        TableColumn column3 = new TableColumn("操作");
+
+        TableColumn<TaskItem, TaskItem> column3 = new TableColumn<>("操作");
+        column3.setCellFactory(new Callback<TableColumn<TaskItem, TaskItem>, TableCell<TaskItem, TaskItem>>() {
+            @Override
+            public TableCell<TaskItem, TaskItem> call(TableColumn param) {
+                Button copyBtn = new Button("Copy");
+                TableCell<TaskItem, TaskItem> cell = new TableCell<TaskItem, TaskItem>() {
+                    @Override
+                    protected void updateItem(TaskItem item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (!empty) {
+                            setGraphic(copyBtn);
+                        }
+                    }
+                };
+                copyBtn.setOnAction(event ->
+                        System.out.println(cell.getItem()));
+                return cell;
+            }
+        });
         // 添加列
         tableView.getColumns().add(column1);
         tableView.getColumns().add(column2);
         tableView.getColumns().add(column3);
+
         tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
 
@@ -75,13 +99,10 @@ public class TablePane extends AbstractTab {
                 return;
             }
 
-            List<TaskItem> taskItems = JsonUtil.listTaskItem(inputTextArea.getText());
+            taskItems = JsonUtil.listTaskItem(inputTextArea.getText());
             // todo 改成stream
             tableView.getItems().clear();
             tableView.getItems().addAll(taskItems);
-//            for (TaskItem taskItem : taskItems) {
-//                tableView.getItems().add(new TaskItem(taskItem.getSprintVersion(), taskItem.getName()));
-//            }
         });
     }
 

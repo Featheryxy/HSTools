@@ -4,12 +4,15 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.utility.CollectionUtils;
+import ind.milo.entity.TaskItem;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.beanutils.BeanUtils;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Path;
 import java.util.Collections;
 import java.util.HashMap;
@@ -48,14 +51,18 @@ public class FreemarkerUtil {
     }
 
 
-    public static void main(String[] args) throws TemplateException, IOException {
+    public static void main(String[] args) throws TemplateException, IOException, InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         String ftlPath = "F:\\JavaFX\\HSTools\\src\\main\\resources\\ftl";
-        String ftlName = "hello.ftl";
+        String ftlName = "mdf.ftl";
         FreemarkerUtil freemarkerUtil = new FreemarkerUtil(ftlPath, ftlName);
-        Map map = new HashMap();
-        map.put("hello", "Hello FreeMarker!");
-        map.put("name", "这是一段带有攻击性的字符串请点击");
-        freemarkerUtil.exce(map);
+//        Map map = new HashMap();
+//        map.put("hello", "Hello FreeMarker!");
+//        map.put("name", "这是一段带有攻击性的字符串请点击");
+//        freemarkerUtil.exce(map);
+        TaskItem taskItem = new TaskItem("123", "干活");
+        Map<String, String> stringMap = BeanUtils.describe(taskItem);
+
+        freemarkerUtil.exce(stringMap);
 
     }
 }

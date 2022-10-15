@@ -1,7 +1,7 @@
-[当前可提交版本] ${sprintVersion}
-[需求编号] ${storyNumbers}
-[修改单编号] ${taskNumber}
-[修改原因] ${mdfReason}
+[当前可提交版本] ${sprintVersion!''}
+[需求编号] ${storyNumbers!''}
+[修改单编号] ${taskNumber!''}
+[修改原因] ${name!''}
 
 
 【涉及子系统】：信托
@@ -14,5 +14,5 @@
 【是否增值业务】：
 【是否个性化】：
 
-/* ${date} ${jobId}  ${mdfReason} beg */
-/* ${date} ${jobId}  ${mdfReason} end */
+/* ${date!''} ${jobId!''}  ${name!''} beg */
+/* ${date!''} ${jobId!''}  ${name!''} end */
