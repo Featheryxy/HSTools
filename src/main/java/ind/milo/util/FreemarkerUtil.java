@@ -40,7 +40,7 @@ public class FreemarkerUtil {
         cfg.setDirectoryForTemplateLoading(new File(ftlPath));
     }
 
-    public void exce(Object dataModel) throws IOException, TemplateException {
+    public String exce(Object dataModel) throws IOException, TemplateException {
         setConfig();
         template = cfg.getTemplate(ftlName);
 
@@ -48,6 +48,7 @@ public class FreemarkerUtil {
         template.process(dataModel, stringWriter);
         String resultStr = stringWriter.toString();
         System.out.println(resultStr);
+        return resultStr;
     }
 
 
@@ -63,6 +64,5 @@ public class FreemarkerUtil {
         Map<String, String> stringMap = BeanUtils.describe(taskItem);
 
         freemarkerUtil.exce(stringMap);
-
     }
 }
