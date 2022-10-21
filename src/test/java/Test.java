@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.util.HashMap;
 
 public class Test {
     private static Logger logger = LoggerFactory.getLogger(Test.class);
@@ -119,5 +120,16 @@ public class Test {
         logger.debug("end");
     }
 
+    @org.junit.jupiter.api.Test
+    public void test4(){
+        int a = 0;
+        System.out.println(a);
+        HashMap<String, Double> map = new HashMap<>();
+        System.out.println(map.get("cfmVol") == null);
+        map.put("cfmVol", 200.0);
+        map.put("cfmVol", 300.0);
+        System.out.println(map);
+
+    }
 }
 
