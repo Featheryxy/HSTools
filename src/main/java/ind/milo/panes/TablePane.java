@@ -1,9 +1,6 @@
 package ind.milo.panes;
 
-import freemarker.template.Configuration;
-import freemarker.template.Template;
 import freemarker.template.TemplateException;
-import ind.milo.demo.javafxdemo.TableViewDemo;
 import ind.milo.entity.TaskItem;
 import ind.milo.framework.AbstractTab;
 import ind.milo.framework.UIFactory;
@@ -12,22 +9,15 @@ import ind.milo.util.JsonUtil;
 import ind.milo.util.StringUtil;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.ObservableList;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.Clipboard;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.DataFormat;
-import javafx.scene.layout.Priority;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.util.Callback;
 import org.apache.commons.beanutils.BeanUtils;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.StringWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -36,9 +26,9 @@ import java.util.Map;
  * @Created by Milo
  */
 public class TablePane extends AbstractTab {
-    private Tab tableTab ;
+    private Tab tableTab;
 
-    private VBox vBox ;
+    private VBox vBox;
 
     private TextArea inputTextArea;
     private Button button;
@@ -68,60 +58,74 @@ public class TablePane extends AbstractTab {
         TableColumn<TaskItem, TaskItem> column3 = new TableColumn<>("操作");
         column3.setCellValueFactory(p -> new ReadOnlyObjectWrapper<>(p.getValue()));
         // 添加列
-        column3.setCellFactory(new Callback<TableColumn<TaskItem, TaskItem>, TableCell<TaskItem, TaskItem>>() {
-            @Override
-            public TableCell<TaskItem, TaskItem> call(TableColumn param) {
-                Button copyBtn = new Button("Copy");
-                TableCell<TaskItem, TaskItem> cell = new TableCell<TaskItem, TaskItem>() {
-                    @Override
-                    protected void updateItem(TaskItem item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (!empty) {
-                            setGraphic(copyBtn);
-                        }
-                    }
-                };
-                copyBtn.setOnAction(event -> {
-                    String ftlPath = "F:\\JavaFX\\HSTools\\src\\main\\resources\\ftl";
-                    String ftlName = "mdf.ftl";
-                    FreemarkerUtil freemarkerUtil = new FreemarkerUtil(ftlPath, ftlName);
-                    Map<String, String> stringMap = null;
-                    try {
-                        stringMap = BeanUtils.describe(cell.getItem());
-                    } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
-                        e.printStackTrace();
-                    }
-                    stringMap.put("date", LocalDate.now().toString());
-                    stringMap.put("jobId", "yexy34716");
-                    String mdfStr=null;
-                    try {
-                        mdfStr = freemarkerUtil.exce(stringMap);
-                    } catch (IOException | TemplateException e) {
-                        e.printStackTrace();
-                    }
-
-                    Clipboard clipboard = Clipboard.getSystemClipboard();
-                    ClipboardContent clipboardContent = new ClipboardContent();
-                    clipboardContent.put(DataFormat.PLAIN_TEXT, mdfStr);
-                    clipboard.setContent(clipboardContent);
-                });
-                return cell;
-            }
-        });
+        column3.setCellFactory(this::getTaskItemTaskItemTableCell);
 
         tableView.getColumns().addAll(column1, column2, column3);
         tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
 
+    private TableCell<TaskItem, TaskItem> getTaskItemTaskItemTableCell(TableColumn<TaskItem, TaskItem> param) {
+        Button copyBtn = new Button("Copy");
+        Button deleteBtn = new Button("Delete");
+        HBox hBox = new HBox(10, copyBtn, deleteBtn);
+
+        TableCell<TaskItem, TaskItem> cell = new TableCell<TaskItem, TaskItem>() {
+            @Override
+            protected void updateItem(TaskItem item, boolean empty) {
+                super.updateItem(item, empty);
+                if (!empty) {
+                    setGraphic(hBox);
+                } else {
+                    setGraphic(null);
+                }
+            }
+        };
+        deleteBtn.setOnAction(e -> onDelete(cell));
+        copyBtn.setOnAction(event -> onCopy(cell));
+        return cell;
+    }
+
+    private void onDelete(TableCell<TaskItem, TaskItem> cell) {
+        ObservableList<TaskItem> items = cell.getTableView().getItems();
+        TaskItem item = cell.getItem();
+        if (null == item) {
+            return;
+        }
+        items.remove(item);
+    }
+
+    private void onCopy(TableCell<TaskItem, TaskItem> cell) {
+        String ftlPath = "F:\\JavaFX\\HSTools\\src\\main\\resources\\ftl";
+        String ftlName = "mdf.ftl";
+        FreemarkerUtil freemarkerUtil = new FreemarkerUtil(ftlPath, ftlName);
+        Map<String, String> stringMap = null;
+        try {
+            stringMap = BeanUtils.describe(cell.getItem());
+        } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+            e.printStackTrace();
+        }
+        stringMap.put("date", LocalDate.now().toString());
+        stringMap.put("jobId", "yexy34716");
+        String mdfStr = null;
+        try {
+            mdfStr = freemarkerUtil.exce(stringMap);
+        } catch (IOException | TemplateException e) {
+            e.printStackTrace();
+        }
+
+        UIFactory.setContent2Clipboard(mdfStr);
+    }
+
+
     public void set() {
-        vBox.getChildren().addAll(inputTextArea, button,tableView);
+        vBox.getChildren().addAll(inputTextArea, button, tableView);
         tableTab.setClosable(false);
         tableTab.setContent(vBox);
     }
 
     @Override
     public void action() {
-        button.setOnAction((event)->{
+        button.setOnAction((event) -> {
             if (StringUtil.isNullStr(inputTextArea.getText())) {
                 return;
             }

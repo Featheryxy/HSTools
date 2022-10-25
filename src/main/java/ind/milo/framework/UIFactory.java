@@ -3,6 +3,9 @@ package ind.milo.framework;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DataFormat;
 
 
 import java.util.*;
@@ -38,5 +41,12 @@ public class UIFactory {
         Button button = new Button(text);
         // button.setOnAction();
         return null;
+    }
+
+    public static void setContent2Clipboard(String text) {
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        ClipboardContent clipboardContent = new ClipboardContent();
+        clipboardContent.put(DataFormat.PLAIN_TEXT, text);
+        clipboard.setContent(clipboardContent);
     }
 }
