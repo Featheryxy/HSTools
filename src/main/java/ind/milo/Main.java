@@ -21,6 +21,12 @@ import ind.milo.panes.SqlTab;
 
 public class Main extends Application {
     @Override
+    public void init() throws Exception {
+        super.init();
+
+    }
+
+    @Override
     public void start(Stage primaryStage) throws Exception {
         TabPane tabPane = new TabPane();
 
