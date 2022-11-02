@@ -1,5 +1,10 @@
 package ind.milo.panes;
 
+import cn.hutool.crypto.SecureUtil;
+import cn.hutool.crypto.digest.DigestAlgorithm;
+import cn.hutool.http.HttpRequest;
+import cn.hutool.http.HttpResponse;
+import com.alibaba.fastjson.JSON;
 import freemarker.template.TemplateException;
 import ind.milo.entity.TaskItem;
 import ind.milo.framework.AbstractTab;
@@ -10,15 +15,21 @@ import ind.milo.util.StringUtil;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import org.apache.commons.beanutils.BeanUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -27,6 +38,9 @@ import java.util.Map;
  * @Created by Milo
  */
 public class TablePane extends AbstractTab {
+
+    private static final Logger logger = LoggerFactory.getLogger(TablePane.class);
+
     private Tab tableTab;
 
     private VBox vBox;
@@ -38,15 +52,21 @@ public class TablePane extends AbstractTab {
     private TableView<TaskItem> tableView;
     private List<TaskItem> taskItems;
 
+    private Button btnFetchFromHep;
+
     @Override
     public void init() {
         tableTab = new Tab("修改单");
         inputTextArea = new TextArea();
         vBox = new VBox(10);
+        vBox.setPadding(new Insets(10));
         hBox = new HBox(10);
         buildBtn = UIFactory.getSingleButton("生成");
-        exportBtn = UIFactory.getSingleButton("导出");
+		exportBtn = UIFactory.getSingleButton("导出");
+        btnFetchFromHep = UIFactory.getSingleButton("从效能拉取");
         tableView = new TableView<>();
+        // 表格自动填满vbox剩余高度
+        VBox.setVgrow(tableView, Priority.ALWAYS);
         setTableView();
         set();
     }
@@ -123,7 +143,7 @@ public class TablePane extends AbstractTab {
 
 
     public void set() {
-        hBox.getChildren().addAll(buildBtn, exportBtn);
+        hBox.getChildren().addAll(buildBtn, btnFetchFromHep,exportBtn);
         vBox.getChildren().addAll(inputTextArea, hBox, tableView);
         tableTab.setClosable(false);
         tableTab.setContent(vBox);
@@ -145,11 +165,67 @@ public class TablePane extends AbstractTab {
         exportBtn.setOnAction(event -> {
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Open Resource File");
-            fileChooser.showSaveDialog();
+//            fileChooser.showSaveDialog();
 
 
         });
 
+        btnFetchFromHep.setOnAction(this::onFetchFromHep);
+    }
+
+    private void onFetchFromHep(ActionEvent actionEvent) {
+        btnFetchFromHep.setDisable(true);
+
+        String url = "http://cloudin.proxy.in.hundsun.com/openapi/invoke/defaultFormData";
+        Map<String, Object> params = genHepPostBody();
+
+        logger.info("发送hep报文：" + JSON.toJSONString(params));
+
+        // 这里发送Http的代码可以异步处理防止 UI 卡死
+        HttpResponse execute;
+        String body;
+        try {
+            execute = HttpRequest.post(url)
+                    .timeout(6000)
+                    .form(params)
+                    .execute();
+            body = execute.body();
+        } catch (Exception e) {
+            logger.error("请求HEP出错", e);
+            new Alert(Alert.AlertType.ERROR, "请求HEP出错：" + e.getMessage()).showAndWait();
+            return;
+        }
+
+        logger.info("hep响应json：" + body);
+
+        dataToView(body);
+
+
+        btnFetchFromHep.setDisable(false);
+    }
+
+    private void dataToView(String body) {
+        taskItems = JsonUtil.listTaskItem(body);
+        // todo 改成stream
+        tableView.getItems().clear();
+        tableView.getItems().addAll(taskItems);
+    }
+
+    private Map<String, Object> genHepPostBody() {
+        Map<String, Object> params = new HashMap<>();
+//        params["product_no"] = ""
+        params.put("app_id", "dqwhyanulhrmrrnk");
+        params.put("app_key", "fbbbee8e31a646d3a3a45f5c0e5b3e9");
+        params.put("method", "devtool/fetchTaskList");
+        params.put("charset", "utf-8");
+        params.put("format", "MD5");
+        params.put("timestamp", System.currentTimeMillis());
+        params.put("current_user_id", "yexy34716");
+        params.put("status_list", "0,4,5,6,8,14,16,17,18");
+        String sign =
+                SecureUtil.signParams(DigestAlgorithm.MD5, params, "&", "=", true).toUpperCase();
+        params.put("sign", sign);
+        return params;
 
     }
 
@@ -158,3 +234,6 @@ public class TablePane extends AbstractTab {
         return tableTab;
     }
 }
+
+
+
