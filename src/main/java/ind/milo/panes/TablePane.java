@@ -13,6 +13,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.IOException;
@@ -29,9 +30,11 @@ public class TablePane extends AbstractTab {
     private Tab tableTab;
 
     private VBox vBox;
+    private HBox hBox;
 
     private TextArea inputTextArea;
-    private Button button;
+    private Button buildBtn;
+    private Button exportBtn;
     private TableView<TaskItem> tableView;
     private List<TaskItem> taskItems;
 
@@ -40,7 +43,9 @@ public class TablePane extends AbstractTab {
         tableTab = new Tab("修改单");
         inputTextArea = new TextArea();
         vBox = new VBox(10);
-        button = UIFactory.getSingleButton("生成");
+        hBox = new HBox(10);
+        buildBtn = UIFactory.getSingleButton("生成");
+        exportBtn = UIFactory.getSingleButton("导出");
         tableView = new TableView<>();
         setTableView();
         set();
@@ -118,14 +123,15 @@ public class TablePane extends AbstractTab {
 
 
     public void set() {
-        vBox.getChildren().addAll(inputTextArea, button, tableView);
+        hBox.getChildren().addAll(buildBtn, exportBtn);
+        vBox.getChildren().addAll(inputTextArea, hBox, tableView);
         tableTab.setClosable(false);
         tableTab.setContent(vBox);
     }
 
     @Override
     public void action() {
-        button.setOnAction((event) -> {
+        buildBtn.setOnAction((event) -> {
             if (StringUtil.isNullStr(inputTextArea.getText())) {
                 return;
             }
@@ -134,6 +140,14 @@ public class TablePane extends AbstractTab {
             // todo 改成stream
             tableView.getItems().clear();
             tableView.getItems().addAll(taskItems);
+        });
+
+        exportBtn.setOnAction(event -> {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Open Resource File");
+            fileChooser.showSaveDialog();
+
+
         });
 
 

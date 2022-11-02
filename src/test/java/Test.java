@@ -1,4 +1,3 @@
-import ind.milo.util.RegUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -6,6 +5,10 @@ import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.HashMap;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Test {
     private static Logger logger = LoggerFactory.getLogger(Test.class);
@@ -130,6 +133,28 @@ public class Test {
         map.put("cfmVol", 300.0);
         System.out.println(map);
 
+    }
+
+    @org.junit.jupiter.api.Test
+    public void testStream(){
+        List<String> collect = Stream.of("02", "03")
+                .collect(Collectors.toList());
+
+        String businCode = getBusinCode(collect);
+        System.out.println(businCode);
+    }
+
+    public String getBusinCode(List<String> collect){
+        AtomicReference<String> str = new AtomicReference<>("0");
+        collect.forEach(
+                businCode  -> {
+                    if ("02".equals(businCode)) {
+                        System.out.println(businCode);
+                        str.set(businCode);
+                    }
+                }
+        );
+        return str.get();
     }
 }
 
