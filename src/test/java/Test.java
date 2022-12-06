@@ -1,5 +1,4 @@
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
 import java.nio.ByteBuffer;
@@ -10,8 +9,8 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+@Slf4j
 public class Test {
-    private static Logger logger = LoggerFactory.getLogger(Test.class);
 
     @org.junit.jupiter.api.Test
     public void test() {
@@ -117,10 +116,10 @@ public class Test {
 
     @org.junit.jupiter.api.Test
     public void test3() throws InterruptedException {
-        logger.debug("begin");
+        log.debug("begin");
         System.out.println("hello,...");
         Thread.sleep(3000);
-        logger.debug("end");
+        log.debug("end");
     }
 
     @org.junit.jupiter.api.Test
