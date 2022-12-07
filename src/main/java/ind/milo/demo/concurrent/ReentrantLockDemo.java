@@ -1,4 +1,4 @@
-package ind.milo.concurrent;
+package ind.milo.demo.concurrent;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;

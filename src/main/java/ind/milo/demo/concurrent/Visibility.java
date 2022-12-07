@@ -1,12 +1,6 @@
-package ind.milo.concurrent;
+package ind.milo.demo.concurrent;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
-import org.slf4j.LoggerFactory;
-
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @Date 2022/12/6 9:44

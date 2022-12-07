@@ -1,6 +1,4 @@
-package ind.milo.concurrent;
-
-import org.junit.jupiter.api.Test;
+package ind.milo.demo.concurrent;
 
 import java.util.ArrayList;
 

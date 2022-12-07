@@ -1,8 +1,6 @@
-package ind.milo.concurrent;
+package ind.milo.demo.concurrent;
 
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * @Date 2022/12/6 18:21
