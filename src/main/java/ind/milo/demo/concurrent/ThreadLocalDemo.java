@@ -12,12 +12,15 @@ public class ThreadLocalDemo {
     public static void main(String[] args) throws InterruptedException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, NoSuchFieldException {
         final ThreadLocal<String> threadLocal = new ThreadLocal<>();
         threadLocal.set(Thread.currentThread().getName()+"'s threadlocal");
+        System.out.println(Thread.currentThread().getName()+"'s threadlocal value: "+threadLocal.get());
+        // main's threadlocal value: main's threadlocal
 
         Thread thread = new Thread(() -> {
             Thread currentThread = Thread.currentThread();
             // 获取不到主线程设置的值，所以为null
             System.out.println(threadLocal.get()); // null
-            threadLocal.set(currentThread.getName()+"'s threadlocal");
+
+            threadLocal.set(currentThread.getName()+"'s threadlocal value: sub Thread" );
             System.out.println(threadLocal.get()); // sub-thread : World
 //            try {
 //                Thread.sleep(10000000);
