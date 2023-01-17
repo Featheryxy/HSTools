@@ -1,9 +1,14 @@
 package ind.milo.demo.basic;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 /**
  * @Date 2022/12/8 19:51
  * @Created by Milo
  */
+@Data
 public class Clinit {
 
     private static  int a;

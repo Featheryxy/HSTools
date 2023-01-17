@@ -1,4 +1,4 @@
-package ind.milo.demo;
+package ind.milo.demo.exceptionDemo;
 
 import java.io.IOException;
 
