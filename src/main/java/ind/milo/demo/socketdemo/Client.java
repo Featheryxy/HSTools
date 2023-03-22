@@ -12,8 +12,8 @@ import java.net.Socket;
 public class Client {
     public static void main(String[] args) {
 //        String msg = "SHUTDOWN";
-        String msg = "Hello SocketServer";
         try {
+            String msg = "Hello SocketServer";
             //创建一个Socket，跟本机的8080端口连接
             Socket socket = new Socket("127.0.0.1", 8080);
             //使用Socket创建PrintWriter和BufferedReader进行读写数据
