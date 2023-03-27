@@ -7,12 +7,34 @@ import org.junit.jupiter.api.Test;
  * @Created by Milo
  */
 public class StringDemo {
-    @Test
-    public void contains() {
-        String str = "202212060001150253581329;202212060001150419581331;";
-        boolean contains = str.contains(";");
-        System.out.println(contains);
-        String[] split = str.split(";");
-        System.out.println(split.toString());
+    public static void main(String[] args) {
+        String a = "abc";
+        String a1 = "abc";
+        String b = new String("abc");
+        String b1 = new String("abc");
+
+        System.out.println(a == a1);
+        System.out.println(a == b);
+        System.out.println(b == b1);
+    }
+
+    private int c;
+}
+
+class AA{
+    public void say(){
+        System.out.println("AA");
+    }
+}
+
+class BB extends AA{
+    @Override
+    public void say() {
+        System.out.println("BB");
+    }
+
+    public static void main(String[] args) {
+        AA aa = new BB();
+        aa.say();
     }
 }
