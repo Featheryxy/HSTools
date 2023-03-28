@@ -3,7 +3,10 @@ package ind.milo.demo.stream;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @Date 2023/3/3 17:44
@@ -24,5 +27,25 @@ public class StringStream {
                 .collect(Collectors.joining(","));
         System.out.println(collect);
         System.out.println(collect1);
+
+        Integer a = 13;
+        int i = a;
+
+        int i1 = Integer.parseInt("13");
+        Integer integer = Integer.valueOf("13");
+    }
+
+    @Test
+    public void test2() {
+        String str = "0,1,2,3,4,9,5,6,7,8";
+        String[] split = str.split(",");
+        Stream<String> split1 = Stream.of(split);
+//        split1.sorted(new Comparator<String>() {
+//            @Override
+//            public int compare(String o1, String o2) {
+//                Character
+//            }
+//        })
     }
 }
+

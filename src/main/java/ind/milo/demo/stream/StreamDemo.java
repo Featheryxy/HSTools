@@ -63,6 +63,8 @@ public class StreamDemo {
         int[] ints = {1, 2, 3};
         IntStream stream = Arrays.stream(ints);
         Stream<int[]> ints1 = Stream.of(ints);
+        OptionalInt min = Arrays.stream(ints).min();
+        System.out.println(min.getAsInt());
 
         // 单列集合: 集合对象.stream()
         List<Author> authors = getAuthors();
