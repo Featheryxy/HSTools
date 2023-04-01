@@ -2,10 +2,9 @@ package ind.milo.demo.basic;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Locale;
-import java.util.Scanner;
-import java.util.TreeMap;
-import java.util.TreeSet;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @Date 2023/3/27 13:39
@@ -13,6 +12,41 @@ import java.util.TreeSet;
  */
 public class ScannerDemo {
     public static void main(String[] args) {
+        say((Object) 1);
+    }
+
+    public static void say(Object a){
+        System.out.println("say1");
+    }
+
+
+    public static void say(Integer a){
+        System.out.println("say2");
+    }
+
+    public static void say(char a){
+        System.out.println("say3");
+    }
+
+    public static void say(Character a){
+        System.out.println("say4");
+    }
+
+    private static void test8() {
+        String str = "a,b,,c";
+        String[] split = str.split(",");
+        System.out.println(Arrays.toString(split));
+        List<String> collect = Stream.of(split).filter(tmpStr -> !"".equals(tmpStr)).collect(Collectors.toList());
+        System.out.println(collect);
+        String words = "$bo*y gi!r#l";
+        String[] wordArr = words.split("[^A-Za-z]");
+        System.out.println(Arrays.toString(wordArr));
+        for (int i = wordArr.length-1; i >= 0; i--) {
+            System.out.print(wordArr[i]+" ");
+        }
+    }
+
+    private static void test7() {
         char a = 'a';
         System.out.println((byte)(a));
 
