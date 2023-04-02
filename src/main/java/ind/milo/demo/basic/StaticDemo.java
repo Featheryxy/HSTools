@@ -11,7 +11,7 @@ public class StaticDemo {
 
     public static void main(String[] args) {
         new StaticDemo().printValue();
-        new HashMap<>()
+        new HashMap<>();
     }
 
     private void printValue(){
