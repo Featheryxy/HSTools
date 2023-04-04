@@ -9,5 +9,10 @@ public class Reverser {
 
         byte A = 0;
         System.out.println((char) A);
+
+        double weight = Math.pow(16.0, 2.0);
+        System.out.println(weight);
+
+
     }
 }
