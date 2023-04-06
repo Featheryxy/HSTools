@@ -29,7 +29,8 @@ class PaiLieZuHe {
             ans.add(new String(path));
             return;
         }
-        for (char c : MAPPING[digits[i] - '0'].toCharArray()) {
+        char[] chars = MAPPING[digits[i] - '0'].toCharArray();
+        for (char c : chars) {
             path[i] = c;
             dfs(i + 1);
         }
