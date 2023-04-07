@@ -13,6 +13,9 @@ public class ChangeMoney {
         System.out.println((byte)('0')); // 48
         System.out.println((byte)('9')); // 57
 
+        System.out.println(Integer.toBinaryString(65));
+        System.out.println(Integer.toBinaryString(97));
+
     }
 
     public static void decode(String password) {
