@@ -20,7 +20,7 @@ public class LeetCode_7_Reverse_Integer {
             int last = tmp % 10;
             ret = ret*10+last;
 
-            tmp = (int)(tmp/10);
+            tmp = tmp/10;
         }
 
         if (ret<Integer.MIN_VALUE || ret >Integer.MAX_VALUE) {
@@ -71,4 +71,6 @@ public class LeetCode_7_Reverse_Integer {
 
         return ret;
     }
+
+
 }

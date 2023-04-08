@@ -30,6 +30,7 @@ public class LeetCode_13_Roman_to_Integer {
         int ret = 0;
         for (int i = 0; i < s.length(); ) {
 //            if ()
+            i++;
         }
         return ret;
     }
