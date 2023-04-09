@@ -1,9 +1,9 @@
-package ind.milo.demo.algorithm;
+package ind.milo.demo.algorithm.LeetCode_643;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeetCode_139_Word_Break {
+public class LC0139WordBreak {
     public static void main(String[] args) {
         String s = "leetcode";
         List<String> wordDict = new ArrayList<>();

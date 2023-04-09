@@ -1,4 +1,4 @@
-package ind.milo.demo.algorithm;
+package ind.milo.demo.algorithm.LeetCode_643;
 
 /**
  * @Date 2023/4/7 9:21
@@ -7,7 +7,7 @@ package ind.milo.demo.algorithm;
  * 输入：x = -123
  * 输出：-321
  */
-public class LeetCode_7_Reverse_Integer {
+public class LC0007ReverseInteger {
     public static void main(String[] args) {
         int x = 1534236469;
         int ret = 0;

@@ -1,10 +1,10 @@
-package ind.milo.demo.algorithm;
+package ind.milo.demo.algorithm.LeetCode_643;
 
 import java.awt.image.ImageProducer;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LeetCode_13_Roman_to_Integer {
+public class LC0013RomanToInteger {
     public static void main(String[] args) {
 
 

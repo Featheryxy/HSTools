@@ -1,6 +1,4 @@
-package ind.milo.demo.algorithm;
-
-import java.util.Arrays;
+package ind.milo.demo.algorithm.LeetCode_643;
 
 /**
  * 编写一个函数来查找字符串数组中的最长公共前缀。
@@ -22,10 +20,10 @@ import java.util.Arrays;
  * 链接：https://leetcode.cn/problems/longest-common-prefix
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class LeetCode_14_Longest_Common_Prefix {
+public class LC0014LongestCommonPrefix {
     public static void main(String[] args) {
         String [] strArr = new String[] {"flower","flow","flight"};
-        String s = new LeetCode_14_Longest_Common_Prefix().longestCommonPrefix(strArr);
+        String s = new LC0014LongestCommonPrefix().longestCommonPrefix(strArr);
         System.out.println(s);
     }
 
