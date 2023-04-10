@@ -1,6 +1,4 @@
-package ind.milo.demo.algorithm.LeetCode_643;
-
-import java.util.regex.Pattern;
+package ind.milo.demo.algorithm.LeetCode;
 
 /**
  * 给定一个非空的字符串 s ，检查是否可以通过由它的一个子串重复多次构成。

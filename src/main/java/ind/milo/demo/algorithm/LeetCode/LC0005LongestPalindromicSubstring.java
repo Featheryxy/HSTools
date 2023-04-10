@@ -1,4 +1,4 @@
-package ind.milo.demo.algorithm.LeetCode_643;
+package ind.milo.demo.algorithm.LeetCode;
 
 /**
  * 给你一个字符串 s，找到 s 中最长的回文子串。

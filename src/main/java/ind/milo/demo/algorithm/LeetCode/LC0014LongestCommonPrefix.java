@@ -1,4 +1,4 @@
-package ind.milo.demo.algorithm.LeetCode_643;
+package ind.milo.demo.algorithm.LeetCode;
 
 /**
  * 编写一个函数来查找字符串数组中的最长公共前缀。

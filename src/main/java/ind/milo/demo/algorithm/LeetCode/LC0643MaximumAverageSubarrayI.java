@@ -1,10 +1,10 @@
-package ind.milo.demo.algorithm.LeetCode_643;
+package ind.milo.demo.algorithm.LeetCode;
 
 /**
  * @Date 2023/4/8 17:40
  * @Created by Milo
  */
-public class _Maximum_Average_Subarray_I {
+public class LC0643MaximumAverageSubarrayI {
     public static void main(String[] args) {
         int[] nums = new int[] {1,12,-5,-6,50,3};
         int k = 4;

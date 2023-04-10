@@ -1,4 +1,4 @@
-package ind.milo.demo.algorithm.LeetCode_643;
+package ind.milo.demo.algorithm.LeetCode;
 
 import java.util.HashMap;
 import java.util.Map;

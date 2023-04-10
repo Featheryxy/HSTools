@@ -1,4 +1,4 @@
-package ind.milo.demo.algorithm.LeetCode_643;
+package ind.milo.demo.algorithm.LeetCode;
 
 /**
  * @Date 2023/4/7 9:21
