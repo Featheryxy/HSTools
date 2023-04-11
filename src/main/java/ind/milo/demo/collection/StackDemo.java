@@ -1,4 +1,4 @@
-package ind.milo.demo.basic;
+package ind.milo.demo.collection;
 
 import java.util.Stack;
 

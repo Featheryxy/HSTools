@@ -24,11 +24,12 @@ public class Offer38 {
 
     }
 
-    public static String[] permutation(String s) {
-        for (int i = 0; i < s.length(); i++) {
-            
-        }
-    }
+//    public static String[] permutation(String s) {
+//        for (int i = 0; i < s.length(); i++) {
+//
+//        }
+//
+//    }
 
 
 }
