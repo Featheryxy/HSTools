@@ -24,6 +24,18 @@ public class TestStream {
     public static void main(String[] args) {
 
         List<Author> authors = getAuthors();
+        authors.stream().forEach(
+                (author) ->{
+                    System.out.println(author.getName()+" "+author.getAge());
+                }
+        );
+        System.out.println();
+        authors.stream().sorted(Comparator.comparingInt(Author::getAge).reversed()
+        ).forEach(
+                (author) ->{
+                    System.out.println(author.getName()+" "+author.getAge());
+                }
+        );
 
 //        // 1.年龄小于18岁的作家名字去重
 //        test6(authors);
@@ -52,7 +64,7 @@ public class TestStream {
 
 //        test10();
 
-        test11();
+//        test11();
 //
 //        test12();
 //

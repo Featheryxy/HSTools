@@ -52,6 +52,7 @@ public class LC0077Combinations {
         System.out.println(String.format("当前参数：n:%s, k:%s, begin: %s, path: %s, res: %s", n, k, begin, path, res));
         if (path.size() == k) {
             res.add(new ArrayList<>(path));
+            System.out.println("结果收集："+res);
             return;
         }
         for (int i = begin; i <= n; i++) {
