@@ -38,18 +38,21 @@ public class LC0077Combinations {
         System.out.println(combine(4, 2));
     }
 
+    static int loopNums = 0;
+
     public static List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> res = new ArrayList<>();
         if (k <= 0 || n < k) {
             return res;
         }
         Deque<Integer> path = new ArrayDeque<>();
-        dfs(n, k, 1, path, res);
+        dfs(n, k, 1, path, res, loopNums);
         return res;
     }
 
-    private static void dfs(int n, int k, int begin, Deque<Integer> path, List<List<Integer>> res) {
-        System.out.println(String.format("当前参数：n:%s, k:%s, begin: %s, path: %s, res: %s", n, k, begin, path, res));
+    private static void dfs(int n, int k, int begin, Deque<Integer> path, List<List<Integer>> res, int loopNums) {
+        ++loopNums;
+        System.out.println(String.format("当前参数：loopNums: %s, n:%s, k:%s, begin: %s, path: %s, res: %s",loopNums, n, k, begin, path, res));
         if (path.size() == k) {
             res.add(new ArrayList<>(path));
             System.out.println("结果收集："+res);
@@ -58,7 +61,7 @@ public class LC0077Combinations {
         for (int i = begin; i <= n; i++) {
             path.addLast(i);
             System.out.println("递归之前 => " + path+" res: "+res);
-            dfs(n, k, i + 1, path, res);
+            dfs(n, k, i + 1, path, res, loopNums);
             path.removeLast();
             System.out.println("递归之后 => " + path);
         }
