@@ -15,5 +15,12 @@ public class AndDemo {
 
         System.out.println(1<<2);
         System.out.println(Integer.toBinaryString(4));
+        System.out.println("++++");
+        System.out.println(Integer.toBinaryString(15));
+        System.out.println(Integer.toBinaryString(347809315 ));
+        System.out.println(347809315 & 15);
+        System.out.println(347809315 % 16);
+
+
     }
 }

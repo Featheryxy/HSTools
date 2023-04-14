@@ -8,14 +8,16 @@ import org.junit.jupiter.api.Test;
  */
 public class StringDemo {
     public static void main(String[] args) {
-        String a = "abc";
-        String a1 = "abc";
-        String b = new String("abc");
-        String b1 = new String("abc");
-
-        System.out.println(a == a1);
-        System.out.println(a == b);
-        System.out.println(b == b1);
+        String str1 = "a";
+        String str2 = new String("a");
+        String str3 = "a";
+        System.out.println(str1 == str2);
+        System.out.println(str1.equals(str2) );
+        System.out.println(str1.hashCode() == str2.hashCode());
+        System.out.println("+++++");
+        System.out.println(str1 == str3);
+        System.out.println(str1.equals(str3) );
+        System.out.println(str1.hashCode() == str3.hashCode());
     }
 
     private int c;

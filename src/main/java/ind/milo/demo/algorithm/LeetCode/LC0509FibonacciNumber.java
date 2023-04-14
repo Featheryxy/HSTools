@@ -1,5 +1,7 @@
 package ind.milo.demo.algorithm.LeetCode;
 
+import java.util.Arrays;
+
 /**
  * 斐波那契数 （通常用 F(n) 表示）形成的序列称为 斐波那契数列 。该数列由 0 和 1 开始，后面的每一项数字都是前面两项数字的和。也就是：
  *
@@ -22,30 +24,41 @@ package ind.milo.demo.algorithm.LeetCode;
 public class LC0509FibonacciNumber {
     static int count = 0;
     public static void main(String[] args) {
-        int ans = fib(3);
-//        ans = sum(3);
-        System.out.println();
-        System.out.println(ans);
-        System.out.println(count);
+        fib(40, new int[41]);
+
     }
 
-    public static int fib(int n) {
+    public static int fib(int n, int[] sum) {
         count++;
-        System.out.print(n+ " ");
-        if (n==1 || n==0) {
-            return n;
+//        System.out.print(n + " ");
+        if (sum[n] != 0) {
+            return sum[n];
+        }
+        if (n == 1 || n == 0) {
+            return sum[n] = 1;
         }
 
-        return fib(n-1) + fib(n-2);
+        return sum[n] = (fib(n - 1, sum) + fib(n - 2, sum));
     }
 
 
-    public static int sum(int n){
-        System.out.print(n);
-        if (n == 1) {
-            return n;
+    public static int sum(int n, int[] sum){
+//        count++;
+        // dead code
+        if (sum[n] != 0) {
+            return sum[n];
         }
+//        System.out.print(n);
+        if (n == 1) {
+            return (sum[1] = 1);
+        }
+        return sum[n] = (n + sum(n - 1, sum));
+    }
 
-        return n+sum(n-1);
+    public static int sum(int n) {
+        if (n == 1) {
+            return 1;
+        }
+        return sum(n - 1);
     }
 }

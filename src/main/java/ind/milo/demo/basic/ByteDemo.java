@@ -12,7 +12,7 @@ public class ByteDemo {
         System.out.println(Integer.toBinaryString(( a & 0xFF) + 0x100).substring(1));
         Byte b = -0; // 00000000
         System.out.println(Integer.toBinaryString(( b & 0xFF) + 0x100).substring(1));
-        Byte c = 0; // 00000000
+        Byte c = -1; // 00000000
         System.out.println(Integer.toBinaryString(( c & 0xFF) + 0x100).substring(1));
     }
 }

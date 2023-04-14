@@ -32,7 +32,16 @@ import java.util.*;
  */
 public class LC0077Combinations {
     public static void main(String[] args) {
-        System.out.println(combine(4, 2));
+//        System.out.println(combine(4, 2));
+
+
+        int i = 0;
+        while (true) {
+            String str1 = "a";
+            System.out.println(str1);
+//            i++;
+//            String str2 = new String("a");
+        }
     }
 
     static int methodStackNo = 0;
