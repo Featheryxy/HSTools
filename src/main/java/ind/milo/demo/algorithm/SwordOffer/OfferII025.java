@@ -9,6 +9,7 @@ import java.util.Stack;
  * 给定两个 非空链表 l1和 l2 来代表两个非负整数。数字最高位位于链表开始位置。它们的每个节点只存储一位数字。将这两数相加会返回一个新的链表。
  * <p>
  * 可以假设除了数字 0 之外，这两个数字都不会以零开头。
+ *
  */
 public class OfferII025 {
 
@@ -48,12 +49,12 @@ public class OfferII025 {
         int carry = 0;
 
         // 统一操作
-        while (!stack1.isEmpty() || !stack2.isEmpty() || carry!=0) {
-            int num1 = stack1.isEmpty()?0:stack1.pop();
-            int num2 = stack2.isEmpty()?0:stack2.pop();
+        while (!stack1.isEmpty() || !stack2.isEmpty() || carry != 0) {
+            int num1 = stack1.isEmpty() ? 0 : stack1.pop();
+            int num2 = stack2.isEmpty() ? 0 : stack2.pop();
             // 初始值为0，
-            int sumNum = num1 + num2+carry;
-            carry = sumNum/10;
+            int sumNum = num1 + num2 + carry;
+            carry = sumNum / 10;
 
             ListNode tmpNode = new ListNode();
             tmpNode.val = sumNum % 10;

@@ -21,10 +21,46 @@ import java.util.Map;
  */
 public class LC0003LongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args) {
-        String s =
-                "abba";
-        lengthOfLongestSubstring(s);
+//        String s = "abcabcbb";
+        String s = "aab";
+        System.out.println(lengthOfLongestSubstring(s));
     }
+
+    // 维护一个动态的滑动窗口，用以记录无重复字符的最长子串
+    // 同时移动了两个指针
+    public static int lengthOfLongestSubstringAgain(String s) {
+        int length = s.length();
+        if (length <= 1) {
+            return length;
+        }
+        // 每次循环都可能发生变动
+        int maxLenth = 0;
+        int l = 0, r = 1;
+        // 不包含最后一个字符
+        while (r < length) {
+            String tmpStr = s.substring(l, r);
+            char c = s.charAt(r);
+            if (!tmpStr.contains(String.valueOf(c))) {
+                r++;
+            } else {
+                // 对比的是【l, r】
+                if (tmpStr.length() >= maxLenth) {
+                    maxLenth = tmpStr.length();
+                    // 这里会造成死循环，因为tmpStr和s的的下标不一样 如bca b的下标为0，而在abcabcbb的下标为1
+//                    l = tmpStr.lastIndexOf(c)+1;
+                }
+                l = s.substring(0, r).lastIndexOf(c) + 1;
+
+            }
+        }
+        // 检查最后一个子字符串长度
+        if (r - l > maxLenth) {
+            maxLenth = r - l;
+        }
+        return maxLenth;
+    }
+
+
 
     public static int lengthOfLongestSubstring(String s) {
         // 维护一个动态的滑动窗口，用以记录无重复字符的最长子串
@@ -44,7 +80,7 @@ public class LC0003LongestSubstringWithoutRepeatingCharacters {
                 l = s.substring(0, r).lastIndexOf(currChr)+1;
             }
 
-            // 如果滑动窗口的长度大于最大长度，记录当前最大字符串
+            // 如果滑动窗口的长度大于最大长度，记录当前最大字符串，对比的时【l, r+1】
             String append = s.substring(l, r+1);
             if (append.length() > longestSubstr.length()) {
                 longestSubstr = append;
