@@ -23,10 +23,49 @@ package ind.milo.demo.algorithm.LeetCode;
  */
 public class LC0005LongestPalindromicSubstring {
     public static void main(String[] args) {
-        String s = "babad";
+        String s = "bb";
 //        System.out.println(new StringBuilder("abc").reverse());
-        System.out.println(longestPalindrome(s));
+        System.out.println(longestPalindrome2(s));
     }
+
+    // 中心扩散法，遍历整个字符串，如果一个字符的左右相等，则改字符串回文
+    //s = babad， 假设index= 1， l=0，r=1，s(l) == r(l)
+    public static String longestPalindrome2(String s) {
+        int length = s.length();
+        if (length == 1) {
+            return s;
+        }
+
+        String longestPalindromStr = "";
+        for (int center = 0; center < length; center++) {
+            // 奇数情况
+            int l=center, r=center;
+            while (l>=0 && r<=length-1 && (s.charAt(l) == s.charAt(r)) ) {
+                l--;
+                r++;
+            }
+
+            // 注意：l和r 区间定义的不是回文子串， 【l+1，r-1】才是，长度=r-1-(l+1)+1 = r-l-1
+            if (l+1 >=0 && r - l - 1 > longestPalindromStr.length()) {
+                longestPalindromStr = s.substring(l+1, r);
+            }
+
+            // 偶数情况
+            l = center;
+            r = center + 1;
+            while (l>=0 && r<=length-1 && (s.charAt(l) == s.charAt(r)) ) {
+                l--;
+                r++;
+            }
+            if (l+1 >=0 && r - l - 1 > longestPalindromStr.length()) {
+                longestPalindromStr = s.substring(l+1, r);
+            }
+
+        }
+
+        return longestPalindromStr;
+    }
+
 
     public static boolean isPalindromicStr1(String s) {
         final StringBuilder stringBuilder = new StringBuilder(s);

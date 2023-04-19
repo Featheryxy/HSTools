@@ -9,38 +9,51 @@ package ind.milo.demo.algorithm.LeetCode;
  */
 public class LC0007ReverseInteger {
     public static void main(String[] args) {
-        int x = 1534236469;
-        int ret = 0;
-        boolean isNeg = false;
-        if (x<0) {
-            isNeg = true;
-        }
-        int tmp = Math.abs(x);
-        while (tmp>0){
-            int last = tmp % 10;
-            ret = ret*10+last;
+        int x = -123;
+        System.out.println(reverseOffice(x));
 
-            tmp = tmp/10;
-        }
-
-        if (ret<Integer.MIN_VALUE || ret >Integer.MAX_VALUE) {
-            System.out.println(0);
-        }
-        // 964632435
-        // 2147483647
-
-        if (isNeg) {
-            System.out.println(-ret);
-        } else {
-            System.out.println(ret);
-        }
-
-        System.out.println((int)(1056389759));
 //        System.out.println(solution1(-1534236469));
         // 1534236469
         // 2147483647
         // 9646324351 超过了int类型的最大值
     }
+
+
+    public static int reverse(int x) {
+        long ret = 0;
+//        boolean isNeg = x<0;
+
+        int tmp = Math.abs(x);
+        while (tmp!=0){
+            int last = tmp % 10;
+            //
+            ret = ret*10+last;
+
+            tmp = tmp/10;
+        }
+
+        return (int)ret == ret?(int)ret:0;
+    }
+
+
+    public static int reverseOffice(int x) {
+        int res = 0;
+        while (x != 0) {
+            // a % 10 = b, i.e.: a = 10*n+b
+            // e.g.: (-123 % 10) = -3 , -123 = -12*10 + (-3)
+            // 负数取余也会带上符号，如 -123%10 = -3
+            int temp = x % 10;
+            int newRes = res * 10 + temp;
+            // 是否有溢出
+            if ((newRes - temp) / 10 != res) {
+                return 0;
+            }
+            res = newRes;
+            x /= 10;
+        }
+        return res;
+    }
+
 
     private static void test() {
         byte b = 127;
