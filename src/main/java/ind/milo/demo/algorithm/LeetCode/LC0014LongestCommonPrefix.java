@@ -23,9 +23,40 @@ package ind.milo.demo.algorithm.LeetCode;
 public class LC0014LongestCommonPrefix {
     public static void main(String[] args) {
         String [] strArr = new String[] {"flower","flow","flight"};
-        String s = new LC0014LongestCommonPrefix().longestCommonPrefix(strArr);
+        String s = longestCommonPrefixAgain(strArr);
         System.out.println(s);
     }
+
+    // 遍历整个
+    public static String longestCommonPrefixAgain(String[] strs) {
+        int length = strs.length;
+        if (length == 1) {
+            return strs[0];
+        }
+        int minLength = Integer.MAX_VALUE;
+
+        for (int i = 0; i < length; i++) {
+            minLength = Math.min(strs[i].length(), minLength);
+        }
+
+        int index = 0;
+        boolean isDone = false;
+        for (int j = 0; j < minLength && !isDone; j++) {
+            // 固定一个，对比其他
+            for (int i = 1; i < length; i++) {
+                if (strs[0].charAt(index) != strs[i].charAt(index)) {
+                    isDone = true;
+                    break;
+                }
+            }
+            if (!isDone) {
+                index++;
+            }
+        }
+
+
+        return strs[0].substring(0, index);
+    };
 
     /**
      *  公共前缀，所有的字符都有相同的前缀
@@ -33,7 +64,7 @@ public class LC0014LongestCommonPrefix {
      * @param strs
      * @return
      */
-    public String longestCommonPrefix(String[] strs) {
+    public static String longestCommonPrefix(String[] strs) {
         String ans = strs[0];
         for (int i=1; i<strs.length; i++) {
             String tmpStr = strs[i];

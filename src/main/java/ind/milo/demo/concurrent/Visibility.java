@@ -8,7 +8,8 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class Visibility {
-    private static boolean flag = true;
+//    private static  boolean flag = true;
+    private static volatile boolean flag = true;
     public static void main(String[] args) throws InterruptedException {
 
         new Thread(

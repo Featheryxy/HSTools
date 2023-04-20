@@ -61,6 +61,7 @@ public class LC0013RomanToInteger {
             String tmpStr;
             // 如果 tmpStr在map中，将其变为数字并累计
             // i+1 代表的是s.substring(i, i + 2)，【i， i+1】
+            // 因为 s 中的字符一定出现在map中
             if (i+1<s.length() &&map.get(tmpStr = s.substring(i, i + 2) ) != null) {
                 ret += map.get(tmpStr);
                 i += 2;
