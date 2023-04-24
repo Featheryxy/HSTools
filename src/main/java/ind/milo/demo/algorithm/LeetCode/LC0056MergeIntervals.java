@@ -33,8 +33,9 @@ public class LC0056MergeIntervals {
 
     // [1, 3],
     //    [2, 6], [8, 10], [15, 18]
-    // 双指针，维护一个窗口l，r，用以记录不重叠的区间
+    // 双指针，维护一个窗口l，r，用以记录不重叠的区间,即答案
     // 例子中[1，3]，b = [2，6] 发生了重叠，定义重叠为 2 在区间1，3中。
+    // 初始时
     public static int[][] merge(int[][] intervals) {
         List<int []> ret = new ArrayList<>();
         int length = intervals.length;

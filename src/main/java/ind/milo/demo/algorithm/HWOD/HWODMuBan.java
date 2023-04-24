@@ -1,4 +1,4 @@
-package ind.milo.demo.algorithm;
+package ind.milo.demo.algorithm.HWOD;
 
 import java.util.Arrays;
 

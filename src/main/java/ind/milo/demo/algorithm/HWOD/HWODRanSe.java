@@ -1,4 +1,4 @@
-package ind.milo.demo.algorithm;
+package ind.milo.demo.algorithm.HWOD;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +24,7 @@ public class HWODRanSe {
         int count = 0;
         // 由于一个节点只能染红色或黑色，只有两个选择
         // 所以m个节点一共会有2^m次个染色方案
+        // 在二进制中，
         for (int i = 0; i < (1 << m); i++) {
             // 默认相邻节点都不同色
             boolean flag = true;
