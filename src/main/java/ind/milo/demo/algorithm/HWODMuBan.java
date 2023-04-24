@@ -14,7 +14,7 @@ import java.util.Arrays;
  * 说明：
  * 给第1块木板长度增加1，给第3块木板长度增加2后，这5块木板长度变为[5,5,5,5,5]，最短的木板的长度最大为5。
  */
-public class HWMuBan {
+public class HWODMuBan {
     public static void main(String[] args) {
         int m = 5;
         int n = 3;
@@ -26,6 +26,7 @@ public class HWMuBan {
                     arr[i-1] = arr[i-1] + 1;
                     break;
                 }
+                // 所有木材一样长则在最后一根上加一截
                 if(i== m-1){
                     arr[i] ++;
                 }
