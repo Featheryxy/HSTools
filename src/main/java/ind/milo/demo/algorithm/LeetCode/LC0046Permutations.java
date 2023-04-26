@@ -36,7 +36,7 @@ import java.util.List;
 public class LC0046Permutations {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3};
-
+        new ArrayList<>();
         System.out.println(permute1(nums));
     }
 
