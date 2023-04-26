@@ -27,8 +27,29 @@ public class LC0056MergeIntervals {
             System.out.println(Arrays.toString(num));
         }
 
+        ArrayList<int[]> ans = new ArrayList<>();
+        int length = intervals.length;
+        int l = intervals[0][0], r = intervals[0][1];
+        for (int i = 1; i < length; i++) {
+            int tmpLeft = intervals[i][0];
+            int tmpRight = intervals[i][1];
+            if (tmpLeft > r) {
+                ans.add(new int[]{l, r});
+                l = tmpLeft;
+                r = tmpRight;
+
+            } else {
+                r = Math.max(r, tmpRight);
+            }
+
+
+
+        }
 
     }
+
+
+
 
 
     // [1, 3],
