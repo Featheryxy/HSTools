@@ -27,15 +27,20 @@ public class LC0704BinarySearch {
         System.out.println(search(nums, target));
     }
 
+    // 二分法，每次将搜索范围缩减为原来的一半
     public static int search(int[] nums, int target) {
         int len = nums.length;
         int l=0, r=len-1;
-        // 维护数组[l, r]，其包含了target
+        // 维护数组[l, r]，其包含了target, mid 有可能是问题的答案，所以不能排除掉
+        // 等于 代表要继续搜索【l】这个区间
         while (l<=r) {
-            int middle = (l+r)/2;
+            int middle = l+(l-r)/2; // 防止l+r 溢出
             if (target < nums[middle]) {
+                // 将右边界缩减为中间的左边一位，因为中间在当此循环中已经搜索过了
+                // 下一轮搜索的区间是 [l, middle - 1]
                 r = middle - 1;
             } else if (target > nums[middle]){
+                // 下一轮搜索的区间是 [middle+1, r]
                 l = middle + 1;
             } else {
                 return middle;

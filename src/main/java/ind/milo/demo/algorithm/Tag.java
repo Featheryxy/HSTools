@@ -5,6 +5,7 @@ public enum Tag {
     STRING,
     HASH_TABLE,
     STACK,
+    BINARY_TREE,
 
     BINARY_SEARCH,
     TWO_POINTERS
