@@ -16,10 +16,11 @@ public class PriorityQueueDemo {
             queue.add(tmp);
         }
 
-        System.out.println(queue);
+        System.out.println("堆："+queue);
 
         while (!queue.isEmpty()) {
-            System.out.println(queue.poll());
+            System.out.println("peek: "+queue.peek()); // 查看堆顶元素
+            System.out.println("poll: "+queue.poll()); // 弹出堆顶元素
         }
 
     }

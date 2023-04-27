@@ -1,5 +1,7 @@
 package ind.milo.demo.algorithm.LeetCode;
 
+import ind.milo.demo.algorithm.Tag;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -14,8 +16,8 @@ public class LC0144BinaryTreePreorderTraversal {
         root.right = new TreeNode(3);
         root.left.left = new TreeNode(4);
         root.left.right = new TreeNode(5);
-        root.right.left = new TreeNode(6);
-        root.right.right = new TreeNode(7);
+//        root.right.left = new TreeNode(6);
+//        root.right.right = new TreeNode(7);
 
         System.out.println(preorderTraversal(root));
     }
@@ -66,4 +68,6 @@ public class LC0144BinaryTreePreorderTraversal {
         }
         return ret;
     }
+
+    Tag[] tags = {Tag.BINARY_TREE};
 }

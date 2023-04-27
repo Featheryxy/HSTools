@@ -1,11 +1,14 @@
 package ind.milo.demo.algorithm.LeetCode;
 
+import ind.milo.demo.algorithm.Tag;
+import org.junit.jupiter.api.Tags;
+
 import java.util.ArrayList;
 import java.util.List;
 
 // 给定一个二叉树的根节点 root ，返回 它的 中序 遍历 。
 // 二叉树递归时，一个节点会被访问三次，分别时第一次进入节点A是，遍历节点A的左子树后，遍历节点A的右子树后
-public class LC0094BinaryTreeInorderTraversal {
+public class LC0094_Binary_Tree_Inorder_Traversal {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -40,4 +43,6 @@ public class LC0094BinaryTreeInorderTraversal {
         dfs(node.right, path);
         return path;
     }
+
+    Tag[] tas = {Tag.BINARY_TREE};
 }

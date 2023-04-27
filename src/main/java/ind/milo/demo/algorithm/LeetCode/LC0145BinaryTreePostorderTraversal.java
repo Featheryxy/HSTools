@@ -1,5 +1,7 @@
 package ind.milo.demo.algorithm.LeetCode;
 
+import ind.milo.demo.algorithm.Tag;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,4 +42,5 @@ public class LC0145BinaryTreePostorderTraversal {
         return path;
     }
 
+    Tag[] tags = {Tag.BINARY_TREE};
 }
