@@ -5,6 +5,7 @@ package ind.milo.demo.basic;
  * @Created by Milo
  */
 public class SwithcDemo {
+    // 默认向下穿透
     public static void main(String[] args) {
         String ch = "H";
         switch (ch) {
