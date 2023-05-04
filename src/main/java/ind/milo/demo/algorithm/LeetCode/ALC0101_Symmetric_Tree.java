@@ -9,22 +9,40 @@ import ind.milo.demo.algorithm.Tag;
  */
 public class ALC0101_Symmetric_Tree {
     public static void main(String[] args) {
-
+        TreeNode symmetricTree = TreeNode.getSymmetricTree();
+        isSymmetric(symmetricTree);
     }
 
     public static boolean isSymmetric(TreeNode root) {
-        dfs(root);
-        return false;
+
+        return dfs(root.left, root.right);
     }
 
-    private static void dfs(TreeNode node) {
-        if (node == null) {
-            return ;
+    private static boolean dfs(TreeNode left, TreeNode right) {
+        if (left == null && right != null) {
+            return false;
         }
 
-//        return node.left.val == node.right.val;
+        if (left != null && right == null) {
+            return false;
+        }
 
+        if (left == null && right == null) {
+            return true;
+        }
 
+        if (left.val != right.val) {
+            return false;
+        }
+
+        // 如果 左右子结点相同，则应该继续向下一层搜索
+//        if (left.val == right.val) {
+//            return true;
+//        }
+
+        boolean outside = dfs(left.left, right.right);
+        boolean inside = dfs(left.right, right.left);
+        return outside && inside;
     }
 
     Tag[] tags = {Tag.BINARY_TREE};

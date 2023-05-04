@@ -42,7 +42,6 @@ public class LC0151_Reverse_Words_in_a_String {
         System.out.println(reverseWords(s));
     }
 
-    // 可以直接反向遍历strArr，将其加入到stringbuilder中就可以了
     public static String reverseWords(String s) {
         s = s.trim();
         String[] strArr = s.split(" ");
@@ -82,6 +81,9 @@ public class LC0151_Reverse_Words_in_a_String {
 //        return join;
         return stringBuilder.toString().trim();
     }
+
+    // method2: 可以直接反向遍历strArr，将其加入到stringbuilder中就可以了
+
 
     Tag[] tags = {Tag.STRING, Tag.TWO_POINTERS};
 }

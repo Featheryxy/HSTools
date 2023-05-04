@@ -1,9 +1,11 @@
 package ind.milo.demo.algorithm.LeetCode;
 
+import ind.milo.demo.algorithm.Tag;
+
 import java.util.*;
 
 // 给你二叉树的根节点 root ，返回其节点值的 层序遍历 。 （即逐层地，从左到右访问所有节点）。
-public class LC0102BinaryTreeLevelOrderTraversal {
+public class LC0102_Binary_Tree_Level_Order_Traversal {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -47,8 +49,7 @@ public class LC0102BinaryTreeLevelOrderTraversal {
     }
 
 
-
-//    public static List<List<Integer>> dfs(TreeNode node, List<Integer> path, int depths) {
+    //    public static List<List<Integer>> dfs(TreeNode node, List<Integer> path, int depths) {
 //        depths++;
 //        // 叶子节点的下一个左（右）节点为空时返回
 //        if (node == null) {
@@ -60,4 +61,5 @@ public class LC0102BinaryTreeLevelOrderTraversal {
 //        dfs(node.right, path, depths);
 //        return path;
 //    }
+    Tag[] tags = {Tag.BINARY_TREE};
 }

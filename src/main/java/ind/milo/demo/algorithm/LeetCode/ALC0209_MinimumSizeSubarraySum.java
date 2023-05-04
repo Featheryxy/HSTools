@@ -1,5 +1,7 @@
 package ind.milo.demo.algorithm.LeetCode;
 
+import java.util.Optional;
+
 /**
  * 给定一个含有n个正整数的数组和一个正整数 target 。
  *
@@ -32,6 +34,7 @@ package ind.milo.demo.algorithm.LeetCode;
  */
 public class ALC0209_MinimumSizeSubarraySum {
     public static void main(String[] args) {
+        System.out.println(Optional.ofNullable(null).orElse("0"));
         int target = 7;
         int[] nums = {2, 3, 1, 2, 4, 3};
         System.out.println(minSubArrayLen(target, nums));

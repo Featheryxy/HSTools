@@ -2,13 +2,13 @@ package ind.milo.demo.gof.singleton;
 
 public class SingletonLazy {
     // 饱汉式（懒汉式），延迟加载, 在第一次调用getInstance()时创建对象
-    private SingletonLazy singleton = null;
+    private static SingletonLazy singleton = null;
 
     private SingletonLazy(){
 
     }
 
-    public synchronized SingletonLazy getSingleton() {
+    public static synchronized SingletonLazy getSingleton() {
         if (singleton == null) {
             singleton = new SingletonLazy();
         }

@@ -11,7 +11,7 @@ public class SingletonDoubleCheck {
         // 后续的线程进来后，并不会直接调用synchronized方法，提高了性能
         if (instance == null) {
             synchronized (Singleton.class) {
-                if (instance == null) {
+                if (instance == null) { //如果没有这个判断，会创建多个实例
                     instance = new SingletonDoubleCheck();
                 }
             }

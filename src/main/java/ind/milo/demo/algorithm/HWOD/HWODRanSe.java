@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Date 2023/4/24 16:49
- * @Created by Milo
+    给定一个图，该图的节点只能染红色或黑色，求该图任何两个相邻的节点不为红色的染色方案数量
  */
 public class HWODRanSe {
     public static void main(String[] args) {
@@ -24,7 +23,7 @@ public class HWODRanSe {
         int count = 0;
         // 由于一个节点只能染红色或黑色，只有两个选择
         // 所以m个节点一共会有2^m次个染色方案
-        // 在二进制中，
+        // 整数i在二进制中，代表了各个染色
         for (int i = 0; i < (1 << m); i++) {
             // 默认相邻节点都不同色
             boolean flag = true;
