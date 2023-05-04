@@ -1,5 +1,7 @@
 package ind.milo.demo.algorithm.LeetCode;
 
+import ind.milo.demo.algorithm.Tag;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -23,21 +25,45 @@ import java.util.Queue;
  */
 public class ALC0108_Convert_Sorted_Array_to_Binary_Search_Tree {
     public static void main(String[] args) {
-        int[] nums = {-10, -3, 0, 5, 9};
+        int[] nums = {-11, -10, -3, 0, 5, 9, 10};
         TreeNode root = sortedArrayToBST(nums);
         TreeNode.toStringInOrder(root);
         // ans: [0,-3,9,-10,null,5]
-        //                0
-        //          -3          9
-        //      -10    null  5
-        // myans:         0
-        //            -3     5
-        //        -10    9
+
+    }
+
+    public static TreeNode sortedArrayToBST(int[] nums) {
+        TreeNode root = dfs(nums, 0, nums.length-1);
+        return root;
+    }
+
+    // 区间划分，每个区间最中间的值最大
+    private static TreeNode dfs(int[] nums, int low, int high) {
+        // 不能有等于，否则会少节点
+        if (low > high) {
+            return null;
+        }
+
+        int mid = low + (high - low) / 2;
+        TreeNode treeNode = new TreeNode(nums[mid]);
+        // 下面这种写法错误，因为会对mid进行赋值
+//        treeNode.left = dfs(nums, low, --mid);
+//        treeNode.right = dfs(nums, ++mid, high);
+        treeNode.left = dfs(nums, low, mid-1);
+        treeNode.right = dfs(nums, mid+1, high);
+        return treeNode;
     }
 
     // 1, 2, 3, 4
     // 找到数组的中间位置,  向两边扩散
-    public static TreeNode sortedArrayToBST(int[] nums) {
+    //         // ans: [0,-3,9,-10,null,5]
+    //        //                0
+    //        //          -3          9
+    //        //      -10    null  5
+    //        // myans:         0
+    //        //            -3     5
+    //        //        -10    9
+    public static TreeNode sortedArrayToBSTError(int[] nums) {
         int len = nums.length;
         int mid = len/2;
         int left = mid-1, right=mid+1;
@@ -85,4 +111,5 @@ public class ALC0108_Convert_Sorted_Array_to_Binary_Search_Tree {
 
     }
 
+    Tag[] tags = {Tag.BINARY_TREE};
 }

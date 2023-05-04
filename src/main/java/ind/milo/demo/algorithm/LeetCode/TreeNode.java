@@ -10,23 +10,29 @@ import java.util.Queue;
  * @Created by Milo
  */
 public class TreeNode {
-    int val;
+    Integer val;
     TreeNode left;
     TreeNode right;
 
     TreeNode() {
     }
 
-    TreeNode(int val) {
+    TreeNode(Integer val) {
         this.val = val;
     }
 
-    TreeNode(int val, TreeNode left, TreeNode right) {
+    TreeNode(Integer val, TreeNode left, TreeNode right) {
         this.val = val;
         this.left = left;
         this.right = right;
     }
 
+    /**
+     *                  1
+     *              2       2
+     *            3   4   4    3
+     * @return
+     */
     public static TreeNode getSymmetricTree(){
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -35,6 +41,44 @@ public class TreeNode {
         root.left.right = new TreeNode(4);
         root.right.left = new TreeNode(4);
         root.right.right = new TreeNode(3);
+        return root;
+    }
+
+    // 用队列保存树的结点， 先将根结点入队
+    // 1. 出队条件：队首结点的左右子树不为空
+    // 2. 入队条件：每一个新结点（左右子树为空）
+    // 遍历完数组后，队列中保存的是叶子结点以及左节点不为空的结点
+    public static TreeNode buildByList(List<Integer> arr){
+        int len = arr.size();
+        Queue<TreeNode> queue = new LinkedList<>();
+        TreeNode root = new TreeNode(arr.get(0));
+        queue.add(root);
+
+        int nullCount = 0;
+        for (int i = 1; i < len; i++) {
+            Integer integer = arr.get(i);
+            if (integer == null) {
+                nullCount++;
+                continue;
+            }
+            TreeNode treeNode = new TreeNode(integer);
+            queue.add(treeNode);
+            TreeNode queueHead = queue.element();
+            // 1. 如果队首的结点左右子树都不为空，出队
+            // 2. 新加结点自动赋值给下一个队首的左子树
+            if (queueHead.left != null && queueHead.right != null) {
+                queue.remove();
+                TreeNode element = queue.element();
+                element.left = treeNode;
+            } else {
+                if (queueHead.left == null) {
+                    queueHead.left = treeNode;
+                } else {
+                    queueHead.right = treeNode;
+                }
+            }
+        }
+
         return root;
     }
 
