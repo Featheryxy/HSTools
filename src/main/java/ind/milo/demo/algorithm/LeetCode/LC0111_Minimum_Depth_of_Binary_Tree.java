@@ -20,18 +20,44 @@ package ind.milo.demo.algorithm.LeetCode;
  */
 public class LC0111_Minimum_Depth_of_Binary_Tree {
     public static void main(String[] args) {
-        TreeNode root = TreeNode.getSymmetricTree();
+        TreeNode root = TreeNode.buildByArr(new int[]{1,2,3,4,5});// ans = 2
         LC0111_Minimum_Depth_of_Binary_Tree solution = new LC0111_Minimum_Depth_of_Binary_Tree();
         System.out.println(solution.minDepth(root));
     }
     private int minDepth = Integer.MAX_VALUE;
 
     public int minDepth(TreeNode root) {
-        dfs(root, 0);
-        return minDepth;
+        if (root == null) {
+            return 0;
+        }
+
+        // 叶子结点：子节点的节点， i.e.:其左右子节点都为空
+        if (root.left == null && root.right == null) {
+            return 1;
+        }
+
+
+        int left = Integer.MAX_VALUE, right = Integer.MAX_VALUE;
+
+        if (root.left != null) {
+            left = minDepth(root.left);
+        }
+
+        if (root.right != null) {
+            right = minDepth(root.right);
+        }
+
+        return 1+Math.min(left, right);
     }
 
-    private void dfs(TreeNode node, int deep) {
+    private void dfs(TreeNode node, int i) {
+        if (node == null) {
+            return;
+        }
+    }
+
+    private void dfsErr(TreeNode node, int deep) {
+        // 如果【1，2】，会输出1， 但是正确答案应该是2
         if (node == null) {
             minDepth = Math.min(deep, minDepth);
             return;
