@@ -1,5 +1,7 @@
 package ind.milo.demo.algorithm.LeetCode;
 
+import ind.milo.demo.algorithm.Tag;
+
 /**
  * 给定一个二叉树，找出其最小深度。
  *
@@ -19,6 +21,8 @@ package ind.milo.demo.algorithm.LeetCode;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class LC0111_Minimum_Depth_of_Binary_Tree {
+    static Tag[] tags = {Tag.BINARY_TREE};
+
     public static void main(String[] args) {
         TreeNode root = TreeNode.buildByArr(new int[]{1,2,3,4,5});// ans = 2
         LC0111_Minimum_Depth_of_Binary_Tree solution = new LC0111_Minimum_Depth_of_Binary_Tree();

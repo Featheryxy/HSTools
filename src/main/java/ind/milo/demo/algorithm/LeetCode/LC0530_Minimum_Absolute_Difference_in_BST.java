@@ -15,17 +15,21 @@ import java.util.List;
 
  */
 public class LC0530_Minimum_Absolute_Difference_in_BST {
+    static Tag[] tags = {Tag.BINARY_TREE, Tag.TWO_POINTERS};
+
     private static int res = Integer.MAX_VALUE;
     private static TreeNode preNode = null;
 
     public static void main(String[] args) {
-        int arr[] = {4, 2, 6, 1, 3};
+//        int arr[] = {4, 2, 6, 1, 3};
+        int arr[] = {1};
         TreeNode root = TreeNode.buildByArr(arr);
-        int difference = getMinimumDifferenceInefficient(root);
+        int difference = getMinimumDifferenceOffice(root);
         System.out.println(difference);
     }
 
-    // 双指针法，一个指针指向前一个指针
+    // method2: 中跟遍历，双指针法，一个指针指向前一个结点
+    // ps: 题目提示， 结点数一定会超过2个结点
     public static int getMinimumDifferenceOffice(TreeNode root) {
         dfsOffice(root);
         return res;
@@ -72,7 +76,6 @@ public class LC0530_Minimum_Absolute_Difference_in_BST {
         dfs(node.right, list);
     }
 
-    Tag[] tags = {Tag.BINARY_TREE, Tag.RECURSION};
 
 
 
