@@ -1,5 +1,7 @@
 package ind.milo.demo.algorithm.LeetCode;
 
+import ind.milo.demo.algorithm.Tag;
+
 /**
  * @Date 2023/4/27 19:53
  * @Created by Milo
@@ -40,5 +42,5 @@ public class LC0226_Invert_Binary_Tree {
         node.right = tmpNode;
     }
 
-
+    Tag[] tags = {Tag.BINARY_TREE};
 }
