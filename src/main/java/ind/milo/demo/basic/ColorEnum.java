@@ -4,6 +4,9 @@ package ind.milo.demo.basic;
  * @Date 2023/4/12 14:46
  * @Created by Milo
  */
+
+//  enum ind/milo/demo/basic/ColorEnum extends java/lang/Enum
+//  enum累默认继承抽象类Enum,
 public enum ColorEnum {
     red("红色"),
     yellow("黄色"),
