@@ -28,6 +28,8 @@ import java.util.Stack;
 public class HWOD {
     private static int numIndex = 0;
 
+    final
+
     public static void main(String[] args) {
         String s = "abc3[cd]xyz";
         char[] chars = s.toCharArray();
@@ -63,7 +65,6 @@ public class HWOD {
                 numIndex++;
             }
         }
-
 
 //        StringBuilder res = new StringBuilder();
         String res = "";

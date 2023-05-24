@@ -12,12 +12,23 @@ import java.util.stream.IntStream;
  */
 public class test {
     public static void main(String[] args) {
-        int target = 10;
-        int[] nums = {0, 2, 2, 3, 5, 5, 5};
+        ArrayList<Integer> l = new ArrayList<>();
+        l.add(5);
+        l.add(3);
+        l.add(1);
+        l.add(6);
+        l.add(0, 4);
+        l.remove(1);
+        System.out.println(l);
 
-        Arrays.stream(nums).map((num1) -> (num1 + 1)).forEach(
-                System.out::println
-        );
+        StringBuffer a = new StringBuffer("A");
+        StringBuffer b = new StringBuffer("B");
+        operator(a, b);
+        System.out.println(a+","+b);
+    }
 
+    public static void operator(StringBuffer x, StringBuffer y){
+        x.append(y);
+        y = x;
     }
 }
