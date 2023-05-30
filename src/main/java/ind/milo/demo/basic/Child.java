@@ -8,6 +8,8 @@ import java.util.Arrays;
  * @Created by Milo
  */
 public class Child extends Person {
+    static int age;
+
     String name="child";
 
     public Child(){
@@ -18,7 +20,12 @@ public class Child extends Person {
         System.out.println("Child: "+super.name);
     }
 
-//    @Override
+    @Override
+    public void sayName() {
+
+    }
+
+    //    @Override
 //    public void sayName() {
 //        System.out.println("Child's name: "+name);
 //    }
