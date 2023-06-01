@@ -1,5 +1,7 @@
 package ind.milo.demo.algorithm.LeetCode;
 
+import ind.milo.demo.algorithm.Tag;
+
 import java.util.*;
 
 /**
@@ -32,63 +34,69 @@ import java.util.*;
  */
 public class LC0077Combinations {
     public static void main(String[] args) {
-//        System.out.println(combine(4, 2));
-
-
-        int i = 0;
-        while (true) {
-            String str1 = "a";
-            System.out.println(str1);
-//            i++;
-//            String str2 = new String("a");
-        }
+        System.out.println(combine(4, 2));
     }
-
-    static int methodStackNo = 0;
 
     public static List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> res = new ArrayList<>();
-        if (k <= 0 || n < k) {
+        if (n < k) {
             return res;
         }
         Deque<Integer> path = new ArrayDeque<>();
-        dfs(n, k, 1, path, res, methodStackNo);
+        dfs(n, k, 1, path, res);
         return res;
     }
 
-    private static void dfs(int n, int k, int begin, Deque<Integer> path, List<List<Integer>> res, int methodStackNo) {
-        ++methodStackNo;
-//        System.out.println(String.format("当前参数：methodStackNo: %s, begin: %s, path: %s, res: %s", methodStackNo, begin, path, res));
+    /**
+     *
+     * @param n 1,2,3...n
+     * @param k 组合数
+     * @param begin  记录每层循环的起始数
+     * @param path 记录搜索路径
+     * @param res 记录结果
+     */
+    private static void dfs(int n, int k, int begin, Deque<Integer> path, List<List<Integer>> res) {
         if (path.size() == k) {
             res.add(new ArrayList<>(path));
-            System.out.println("结果收集：" + res + ", methodStackNo: " + methodStackNo);
             return;
         }
-        // 遍历未搜寻的数组
-        for (int i = begin; i <= n; i++) {
-            path.addLast(i);
-//            System.out.println("递归之前 => " + path + ", methodStackNo: " + methodStackNo + ", res: " + res);
-            dfs(n, k, i + 1, path, res, methodStackNo);
+
+        for (int i = begin; i <= n ; i++) {
+            path.add(i);
+            dfs(n, k, i + 1, path, res);
             path.removeLast();
+        }
+    }
+
+//    static int methodStackNo = 0;
+//
+//    public static List<List<Integer>> combine(int n, int k) {
+//        List<List<Integer>> res = new ArrayList<>();
+//        if (k <= 0 || n < k) {
+//            return res;
+//        }
+//        Deque<Integer> path = new ArrayDeque<>();
+//        dfs(n, k, 1, path, res, methodStackNo);
+//        return res;
+//    }
+//
+//    private static void dfs(int n, int k, int begin, Deque<Integer> path, List<List<Integer>> res, int methodStackNo) {
+//        ++methodStackNo;
+////        System.out.println(String.format("当前参数：methodStackNo: %s, begin: %s, path: %s, res: %s", methodStackNo, begin, path, res));
+//        if (path.size() == k) {
+//            res.add(new ArrayList<>(path));
+//            System.out.println("结果收集：" + res + ", methodStackNo: " + methodStackNo);
+//            return;
+//        }
+//        // 遍历未搜寻的数组
+//        for (int i = begin; i <= n; i++) {
+//            path.addLast(i);
+////            System.out.println("递归之前 => " + path + ", methodStackNo: " + methodStackNo + ", res: " + res);
+//            dfs(n, k, i + 1, path, res, methodStackNo);
+//            path.removeLast();
 //            System.out.println("递归之后 => " + path + ", methodStackNo: " + methodStackNo);
-        }
-    }
+//        }
+//    }
 
-    public static List<List<Integer>> combine2(int n, int k) {
-        return fullArray(n, k, 1, new LinkedList<>());
-    }
-
-    private static List<List<Integer>> fullArray(int n, int k, int index, Deque<Integer> item) {
-        List<List<Integer>> list = new ArrayList<>();
-        if (item.size() == k) {
-            list.add(new ArrayList<>(item));
-            return list;
-        }
-        for (int i = index; i <= n; i++) {
-            item.add(i);
-            list.addAll(fullArray(n, k, i + 1, item));
-            item.removeLast();
-        }
-        return list;
-    }
+    public Tag[] tags = {Tag.BACKTRACKING};
 }
