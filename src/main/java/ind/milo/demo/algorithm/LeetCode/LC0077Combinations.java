@@ -51,7 +51,7 @@ public class LC0077Combinations {
      *
      * @param n 1,2,3...n
      * @param k 组合数
-     * @param begin  记录每层循环的起始数
+     * @param begin  记录每层循环的起始数, 在区间 [begin, n] 里选出若干个数的组合
      * @param path 记录搜索路径
      * @param res 记录结果
      */
@@ -61,11 +61,19 @@ public class LC0077Combinations {
             return;
         }
 
-        for (int i = begin; i <= n ; i++) {
+        // 减枝：因为有搜索上界
+        // 比如说 [1,2,3,4], 选3个数组合，path为空 则搜索上界为2
+        for (int i = begin; i <= n-(k-path.size())+1 ; i++) {
             path.add(i);
             dfs(n, k, i + 1, path, res);
             path.removeLast();
         }
+
+//        for (int i = begin; i <= n ; i++) {
+//            path.add(i);
+//            dfs(n, k, i + 1, path, res);
+//            path.removeLast();
+//        }
     }
 
 //    static int methodStackNo = 0;
