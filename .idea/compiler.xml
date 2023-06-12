@@ -11,7 +11,9 @@
         <module name="HStools" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8" />
+    <bytecodeTargetLevel target="8">
+      <module name="HStools (1)" target="8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="PREFER_TARGET_JDK_COMPILER" value="false" />
