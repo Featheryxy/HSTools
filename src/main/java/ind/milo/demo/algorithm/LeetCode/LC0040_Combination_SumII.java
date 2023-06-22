@@ -81,16 +81,24 @@ public class LC0040_Combination_SumII {
 			}
 
 			// 出现重复节点，同层的第一个节点已经被访问过，所以直接跳过
-			if (i > 0 && candidates[i] == candidates[i - 1] && !used[i - 1]) {
-				continue;
-			}
+//			if (i > 0 && candidates[i] == candidates[i - 1] && !used[i - 1]) {
+//				continue;
+//			}
 
-			used[i] = true;
+
+			// 如果从 begin 开始的数有连续出现的重复数字，跳过该数字continue，因为这会产生重复解
+			//因为数不可以重复选择，所以在进入下一层递归时，i要加1，从i之后的数中选择接下来的数
+			if(i > begin && candidates[i] == candidates[i - 1])
+				continue;
+
+
+
+//			used[i] = true;
 			path.add(currCandidate);
 			dfs(candidates, target, i+1, path, pathSum + currCandidate, used);
 			// 状态回退，i.e.:二叉树回到上一层的状态
 			path.remove(path.size() - 1);
-			used[i] = false;
+//			used[i] = false;
 		}
 	}
 

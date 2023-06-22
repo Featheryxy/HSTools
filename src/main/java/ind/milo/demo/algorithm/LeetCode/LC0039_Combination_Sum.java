@@ -46,8 +46,10 @@ import java.util.List;
  */
 public class LC0039_Combination_Sum {
     public static void main(String[] args) {
-        int[] candidates = {2, 3, 6, 7};
-        int target = 7;
+//        int[] candidates = {2, 3, 6, 7};
+//        int target = 7;
+        int[] candidates = {2, 3, 5};
+        int target = 8;
         List<List<Integer>> lists = new LC0039_Combination_Sum().combinationSum(candidates, target);
         System.out.println(lists);
     }
@@ -85,7 +87,7 @@ public class LC0039_Combination_Sum {
             return;
         }
 
-        // 每次搜索的起点都要在当前搜索起点的下一个位置
+        // i：每次搜索的起点都要在当前层级的下一个搜索的下一个位置
         for (int i = begin; i < candidates.length; i++) {
             // 二叉树中跟遍历递增，不遍历大于目标值的节点
             if (pathSum + candidates[i] > target) {
